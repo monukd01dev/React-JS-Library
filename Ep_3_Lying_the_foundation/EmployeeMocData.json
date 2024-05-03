@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "first_name": "Sarajane",
+    "last_name": "Blackbourn",
+    "email": "sblackbourn0@mail.ru",
+    "gender": "Female",
+    "department": "Music"
+  },
+  {
+    "id": 2,
+    "first_name": "Kipp",
+    "last_name": "Jopson",
+    "email": "kjopson1@bloglines.com",
+    "gender": "Male",
+    "department": "Industrial"
+  },
+  {
+    "id": 3,
+    "first_name": "Rhys",
+    "last_name": "Stoltz",
+    "email": "rstoltz2@linkedin.com",
+    "gender": "Male",
+    "department": "Sports"
+  },
+  {
+    "id": 4,
+    "first_name": "Elwyn",
+    "last_name": "Springford",
+    "email": "espringford3@si.edu",
+    "gender": "Male",
+    "department": "Games"
+  },
+  {
+    "id": 5,
+    "first_name": "Brig",
+    "last_name": "Averay",
+    "email": "baveray4@deviantart.com",
+    "gender": "Male",
+    "department": "Industrial"
+  },
+  {
+    "id": 6,
+    "first_name": "Celinka",
+    "last_name": "Streater",
+    "email": "cstreater5@clickbank.net",
+    "gender": "Female",
+    "department": "Garden"
+  },
+  {
+    "id": 7,
+    "first_name": "Anneliese",
+    "last_name": "Guillotin",
+    "email": "aguillotin6@statcounter.com",
+    "gender": "Female",
+    "department": "Shoes"
+  },
+  {
+    "id": 8,
+    "first_name": "Tad",
+    "last_name": "Trusdale",
+    "email": "ttrusdale7@cam.ac.uk",
+    "gender": "Male",
+    "department": "Games"
+  },
+  {
+    "id": 9,
+    "first_name": "Dusty",
+    "last_name": "Eldered",
+    "email": "deldered8@ftc.gov",
+    "gender": "Female",
+    "department": "Jewelry"
+  },
+  {
+    "id": 10,
+    "first_name": "Karoline",
+    "last_name": "Fley",
+    "email": "kfley9@sohu.com",
+    "gender": "Genderqueer",
+    "department": "Garden"
+  }
+]
