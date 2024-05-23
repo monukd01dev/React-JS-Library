@@ -1,9 +1,10 @@
 .header{
-    outline: 1px solid red;
+    // outline: 1px solid red;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px;
+    width: 95%;
+    margin: auto;
     img{
         width: 150px;
     }

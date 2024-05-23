@@ -22,6 +22,17 @@ const Header = () => (
   </div>
 );
 
+//search component
+
+const Search = () => (
+  <div className="search">
+    <input type="text" placeholder="What are you craving today?"></input>
+    <button className="search-btn">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+  </div>
+);
+
 //resturant card component
 
 // const Card = () => <h1>hello</h1>;
@@ -31,12 +42,7 @@ const Header = () => (
 const Main = () => (
   <div className="main">
     <div className="search-con">
-      <div className="search">
-        <input type="text"></input>
-        <div className="search-btn">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </div>
-      </div>
+      <Search />
     </div>
     <div className="restro-con">{/* <Card /> */}</div>
   </div>
