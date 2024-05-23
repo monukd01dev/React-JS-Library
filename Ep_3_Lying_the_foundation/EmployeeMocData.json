@@ -5,7 +5,9 @@
     "last_name": "Blackbourn",
     "email": "sblackbourn0@mail.ru",
     "gender": "Female",
-    "department": "Music"
+    "department": "Music",
+    "about": "Works in Music (Creates beautiful sounds)",
+    "picture": "https://source.unsplash.com/random/300x304/?face"
   },
   {
     "id": 2,
@@ -13,7 +15,9 @@
     "last_name": "Jopson",
     "email": "kjopson1@bloglines.com",
     "gender": "Male",
-    "department": "Industrial"
+    "department": "Industrial",
+    "about": "Works in Industrial (Produces machines and tools)",
+    "picture": "https://source.unsplash.com/random/304x300/?face"
   },
   {
     "id": 3,
@@ -21,7 +25,9 @@
     "last_name": "Stoltz",
     "email": "rstoltz2@linkedin.com",
     "gender": "Male",
-    "department": "Sports"
+    "department": "Sports",
+    "about": "Works in Sports (Encourages physical activity)",
+    "picture": "https://source.unsplash.com/random/303x300/?face"
   },
   {
     "id": 4,
@@ -29,7 +35,9 @@
     "last_name": "Springford",
     "email": "espringford3@si.edu",
     "gender": "Male",
-    "department": "Games"
+    "department": "Games",
+    "about": "Works in Games (Provides entertainment and fun)",
+    "picture": "https://source.unsplash.com/random/300x303/?face"
   },
   {
     "id": 5,
@@ -37,7 +45,9 @@
     "last_name": "Averay",
     "email": "baveray4@deviantart.com",
     "gender": "Male",
-    "department": "Industrial"
+    "department": "Industrial",
+    "about": "Works in Industrial (Produces machines and tools)",
+    "picture": "https://source.unsplash.com/random/300x302/?face"
   },
   {
     "id": 6,
@@ -45,7 +55,9 @@
     "last_name": "Streater",
     "email": "cstreater5@clickbank.net",
     "gender": "Female",
-    "department": "Garden"
+    "department": "Garden",
+    "about": "Works in Garden (Grows plants for beauty and food)",
+    "picture": "https://source.unsplash.com/random/302x300/?face"
   },
   {
     "id": 7,
@@ -53,7 +65,9 @@
     "last_name": "Guillotin",
     "email": "aguillotin6@statcounter.com",
     "gender": "Female",
-    "department": "Shoes"
+    "department": "Shoes",
+    "about": "Works in Shoes (Protects and comforts your feet)",
+    "picture": "https://source.unsplash.com/random/300x299/?face"
   },
   {
     "id": 8,
@@ -61,7 +75,9 @@
     "last_name": "Trusdale",
     "email": "ttrusdale7@cam.ac.uk",
     "gender": "Male",
-    "department": "Games"
+    "department": "Games",
+    "about": "Works in Games (Provides entertainment and fun)",
+    "picture": "https://source.unsplash.com/random/299x300/?face"
   },
   {
     "id": 9,
@@ -69,7 +85,9 @@
     "last_name": "Eldered",
     "email": "deldered8@ftc.gov",
     "gender": "Female",
-    "department": "Jewelry"
+    "department": "Jewelry",
+    "about": "Works in Jewelry (Adds beauty and adornment)",
+    "picture": "https://source.unsplash.com/random/301x300/?face"
   },
   {
     "id": 10,
@@ -77,6 +95,8 @@
     "last_name": "Fley",
     "email": "kfley9@sohu.com",
     "gender": "Genderqueer",
-    "department": "Garden"
+    "department": "Garden",
+    "about": "Works in Garden (Grows plants for beauty and food)",
+    "picture": "https://source.unsplash.com/random/300x301/?face"
   }
 ]
