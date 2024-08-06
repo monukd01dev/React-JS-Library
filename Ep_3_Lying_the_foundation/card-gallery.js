@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom/client";
 import user from "./EmployeeMocData.json";
-console.log(Array.isArray(user));
+// console.log(Array.isArray(user));
 
 const ROOT = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -10,6 +10,10 @@ const getRandomUserImage = async () => {
   const pictureUrl = data.results[0].picture.large; // Access image URL from JSON
   return pictureUrl;
 };
+
+
+
+// console.log( await getRandomUserImage())
 
 // const Card = (data) => (
 //   <div className="card">
@@ -27,7 +31,7 @@ const getRandomUserImage = async () => {
 //   </div>
 // );
 
-const Card = (
+const Card =  (
   data //ye props hai jo ab data ke naam se jana jaega
   //here props are named as data isliye props me sara data_hai fir bhi hum data.first_name ka use kar rahe hai
 ) => (
@@ -53,3 +57,7 @@ const cardArr = user.map((data) => <Card {...data} />); //what if Idn't spread t
 // console.log(<Card rawData={rawData} />);
 
 ROOT.render(cardArr);
+
+// const cardArr = user.map((data) => <Card {...data} />) // properties directly spread intot he props that we wanted to use them
+// const cardArr = user.map((data) => <Card data={data} />); //props.data.property // ye wala case hai jisme data me data mtlb data.data.property name props.data.property kyon nhi kyonki line no 35 pad parameter fo card function
+// const cardArr = user.map((data) => <Card data />) // treaded as boolean

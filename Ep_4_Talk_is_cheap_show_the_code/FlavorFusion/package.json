@@ -2,7 +2,6 @@
   "name": "flavorfusion",
   "version": "1.0.0",
   "description": "Food ordering website",
-  "main": "index.js",
   "scripts": {
     "start": "parcel index.html",
     "prodbuild": "parcel build index.html"

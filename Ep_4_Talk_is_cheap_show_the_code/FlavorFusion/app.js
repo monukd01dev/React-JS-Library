@@ -9,7 +9,8 @@ const Root = ReactDOM.createRoot(document.getElementById("root"));
 const Header = () => (
   <div className="header">
     <div className="logo">
-      <img src="https://i.ibb.co/ZGNq6WG/Flavor-Fusion-Logo.png" />
+      {/* <img src="https://i.ibb.co/ZGNq6WG/Flavor-Fusion-Logo.png" /> */}
+      <img src="FFL.fdc8a8d4.png" />
     </div>
     <div className="nav-items">
       <a href="#home">Home</a>
@@ -28,7 +29,7 @@ const Search = () => (
   <div className="search">
     <input type="text" placeholder="What are you craving today?"></input>
     <button className="search-btn">
-      <i class="fa-solid fa-magnifying-glass"></i>
+      <i className="fa-solid fa-magnifying-glass"></i>
     </button>
   </div>
 );

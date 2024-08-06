@@ -15,7 +15,8 @@
 }
 
 .search-con .search{
-    width: 500px;
+    max-width: 500px;
+    width: 80%;
     height: 60px;
     // outline: 2px solid red;
     display: flex;
@@ -29,7 +30,7 @@
 
     input{
         outline: none;
-        width: 70%;
+        width: calc(100% - 55px);
         border: none;
         font-size: 1.3rem;
     }
