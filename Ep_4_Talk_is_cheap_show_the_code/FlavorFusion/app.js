@@ -4,8 +4,25 @@ import ReactDOM from "react-dom/client";
 const Root = ReactDOM.createRoot(document.getElementById("root"));
 
 // components
+/*
+  After planning for the UI now it’s time to do LLP (Low Level Planning)
+By seeing the basic UI I have to identify what major components my project have
 
-// header
+Header
+  -Logo
+  -Nav Items
+Main
+  -Search
+  -Resturant-container
+  -restro-cards
+Footer
+  -copyright 
+  -links
+  -address
+  -contacts
+*/
+
+// Header
 const Header = () => (
   <div className="header">
     <div className="logo">
@@ -23,6 +40,8 @@ const Header = () => (
   </div>
 );
 
+// Main-Starts Here
+
 //search component
 
 const Search = () => (
@@ -36,18 +55,64 @@ const Search = () => (
 
 //resturant card component
 
-// const Card = () => <h1>hello</h1>;
+const RestaurantCard = () => {
+  return (
+    <div className="restaurant-card">
+      <div className="__card-img"></div>
+      <h3 className="__name">Burger Singh</h3>
+      <p className="__cuisines">Burger, Veg-Pizza, Beverage</p>
+      <div className="__details">
+        <div className="__ratings">
+          <i className="fa-solid fa-star"></i>
+          <span className="__text">4.5</span>
+        </div>
 
-//main
+        <i className="fa-solid fa-circle __dot"></i>
+
+        <div className="__timing">27 MIN</div>
+
+        <i className="fa-solid fa-circle __dot"></i>
+
+        <div className="__offer">&#8377;400 FOR TWO</div>
+      </div>
+      <hr />
+      <div className="__discounts">
+        <div>
+          <span>
+            <i className="fi fi-sr-badge-percent"></i>
+          </span>
+          FREE DELIVERY
+        </div>
+        <div>
+          <span>
+            <i className="fi fi-sr-badge-percent"></i>
+          </span>
+          FREE DELIVERY
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const Main = () => (
   <div className="main">
     <div className="search-con">
       <Search />
     </div>
-    <div className="restro-con">{/* <Card /> */}</div>
+    <div className="restaurant-container">
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+    </div>
   </div>
 );
+
+// Main-Ends Here
 
 //our app
 const AppLayout = () => (
