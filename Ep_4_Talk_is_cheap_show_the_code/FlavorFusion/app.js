@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 
 // importing data from data/restaurants.json
 import restaurantsList from "./data/restaurants.json";
-console.log(restaurantsList);
 
 const Root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -30,8 +29,8 @@ Footer
 const Header = () => (
   <div className="header">
     <div className="logo">
-      {/* <img src="https://i.ibb.co/ZGNq6WG/Flavor-Fusion-Logo.png" /> */}
-      <img src="FFL.fdc8a8d4.png" />
+      <img src="https://i.ibb.co/ZGNq6WG/Flavor-Fusion-Logo.png" />
+      {/* <img src="FFL.fdc8a8d4.png" /> */}
     </div>
     <div className="nav-items">
       <a href="#home">Home</a>
@@ -59,25 +58,38 @@ const Search = () => (
 
 //resturant card component
 
-const RestaurantCard = () => {
+const RestaurantCard = (props) => {
+  const {
+    name,
+    cloudinaryImageId,
+    costForTwo,
+    cuisines,
+    avgRating,
+    sla: { deliveryTime },
+  } = props;
+
+  const styleForImg = {
+    backgroundImage: `url('https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${cloudinaryImageId}')`,
+  };
+
   return (
     <div className="restaurant-card">
-      <div className="__card-img"></div>
-      <h3 className="__name">Burger Singh</h3>
-      <p className="__cuisines">Burger, Veg-Pizza, Beverage</p>
+      <div className="__card-img" style={styleForImg}></div>
+      <h3 className="__name">{name}</h3>
+      <p className="__cuisines">{cuisines.join(", ")}</p>
       <div className="__details">
         <div className="__ratings">
           <i className="fa-solid fa-star"></i>
-          <span className="__text">4.5</span>
+          <span className="__text">{avgRating}</span>
         </div>
 
         <i className="fa-solid fa-circle __dot"></i>
 
-        <div className="__timing">27 MIN</div>
+        <div className="__timing">{deliveryTime} MIN</div>
 
         <i className="fa-solid fa-circle __dot"></i>
 
-        <div className="__offer">&#8377;400 FOR TWO</div>
+        <div className="__offer">{costForTwo}</div>
       </div>
       <hr />
       <div className="__discounts">
@@ -98,14 +110,9 @@ const Main = () => (
       <Search />
     </div>
     <div className="restaurant-container">
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
+      {restaurantsList.map((data) => (
+        <RestaurantCard key={data?.info?.id} {...data?.info} />
+      ))}
     </div>
   </div>
 );
