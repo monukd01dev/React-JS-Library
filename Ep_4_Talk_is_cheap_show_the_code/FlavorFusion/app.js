@@ -1,6 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
+// importing data from data/restaurants.json
+import restaurantsList from "./data/restaurants.json";
+console.log(restaurantsList);
+
 const Root = ReactDOM.createRoot(document.getElementById("root"));
 
 // components
@@ -77,12 +81,6 @@ const RestaurantCard = () => {
       </div>
       <hr />
       <div className="__discounts">
-        <div>
-          <span>
-            <i className="fi fi-sr-badge-percent"></i>
-          </span>
-          FREE DELIVERY
-        </div>
         <div>
           <span>
             <i className="fi fi-sr-badge-percent"></i>

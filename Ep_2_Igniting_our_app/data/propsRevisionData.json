@@ -1,0 +1,98 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Laptop",
+      "description": "Powerful laptop for work and play",
+      "price": 999.99,
+      "discount": 10,
+      "rating": 4.5,
+      "reviews": 250,
+      "images": ["laptop1.jpg", "laptop2.jpg"],
+      "category": "Electronics",
+      "brand": "XYZ",
+      "features": ["Intel Core i7", "16GB RAM", "512GB SSD"],
+      "availability": true
+    },
+    {
+      "id": 2,
+      "name": "Smartphone",
+      "description": "Flagship smartphone with stunning display",
+      "price": 799.99,
+      "discount": 5,
+      "rating": 4.2,
+      "reviews": 350,
+      "images": ["phone1.jpg", "phone2.jpg"],
+      "category": "Electronics",
+      "brand": "ABC",
+      "features": ["Triple camera", "8GB RAM", "128GB storage"],
+      "availability": true
+    },
+    {
+      "id": 3,
+      "name": "Smart TV",
+      "description": "Immersive viewing experience with smart features",
+      "price": 1299.99,
+      "discount": 8,
+      "rating": 4.8,
+      "reviews": 200,
+      "images": ["tv1.jpg", "tv2.jpg"],
+      "category": "Electronics",
+      "brand": "DEF",
+      "features": ["4K resolution", "HDR support", "Voice assistant"],
+      "availability": true
+    },
+    {
+      "id": 4,
+      "name": "Wireless Headphones",
+      "description": "Enjoy your music on the go",
+      "price": 199.99,
+      "discount": 15,
+      "rating": 4.3,
+      "reviews": 400,
+      "images": ["headphones1.jpg", "headphones2.jpg"],
+      "category": "Electronics",
+      "brand": "GHI",
+      "features": [
+        "Noise cancellation",
+        "Long battery life",
+        "Comfortable fit"
+      ],
+      "availability": true
+    },
+    {
+      "id": 5,
+      "name": "Gaming Console",
+      "description": "Ultimate gaming experience",
+      "price": 499.99,
+      "discount": 0,
+      "rating": 4.7,
+      "reviews": 300,
+      "images": ["console1.jpg", "console2.jpg"],
+      "category": "Electronics",
+      "brand": "JKL",
+      "features": ["4K gaming", "VR support", "Online multiplayer"],
+      "availability": true
+    },
+    {
+      "id": 6,
+      "name": "Digital Camera",
+      "description": "Capture stunning photos and videos",
+      "price": 699.99,
+      "discount": 7,
+      "rating": 4.6,
+      "reviews": 220,
+      "images": ["camera1.jpg", "camera2.jpg"],
+      "category": "Electronics",
+      "brand": "MNO",
+      "features": ["High-resolution sensor", "4K video", "Image stabilization"],
+      "availability": true
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Electronics"
+    }
+  ]
+}
