@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Food ordering website",
   "scripts": {
-    "start": "parcel index.html",
+    "start": "parcel public/index.html",
     "prodbuild": "parcel build index.html"
   },
   "author": "@monukd01dev",
