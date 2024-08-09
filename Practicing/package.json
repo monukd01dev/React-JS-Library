@@ -1,0 +1,29 @@
+{
+  "name": "practicing",
+  "version": "1.0.0",
+  "description": "practicing and testing out stuff",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "@monukd01dev"
+  },
+  "keywords": [
+    "practicing",
+    "practising",
+    "react",
+    "reactjs"
+  ],
+  "author": "@monukd01dev",
+  "license": "ISC",
+  "dependencies": {
+    "parcel": "^2.12.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "process": "^0.11.10"
+  }
+}
