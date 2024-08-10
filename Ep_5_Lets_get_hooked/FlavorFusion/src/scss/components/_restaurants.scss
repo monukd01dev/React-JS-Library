@@ -1,0 +1,106 @@
+// retaurant-container design
+.restaurant-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,280px);
+    gap: 10px;
+    place-content: space-evenly;
+
+    margin-top: 50px;
+
+}
+
+// retaurant-card desing
+
+.restaurant-card{
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+    // outline: 2px solid rgb(240 240 240 / 0%);
+    
+    .__card-img{
+        // background-image: url("https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=999&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+
+        width: 100%;
+        height: 200px;
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+        border-radius: inherit;
+    }
+
+    .__name{
+        margin: 15px auto 8px;
+    }
+
+    .__cuisines{
+        font-size: 0.8em;
+        opacity: 90%;
+    }
+
+    .__details{
+        font-size: 0.8rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 18px;
+        margin-bottom: 15px;
+        color: #848484;
+        .__dot{
+            font-size: 0.2rem;
+        }
+
+        .__ratings{
+            background-color: rgb(79, 209, 79);
+            padding: 3px 6px;
+            color: rgb(255, 252, 252);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+            i{
+                font-size: 0.6rem ;
+            }
+        }
+    }
+
+    hr{
+        height: 1px;
+        border: none;
+        background-color: rgba(70, 70, 70,0.3);
+
+
+
+    }
+
+    .__discounts{
+        margin-top: 15px;
+        font-size: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        color: rgb(153, 52, 2);
+        div{
+            display: flex;
+            align-items: center;
+            width: 100%;
+            span{
+                margin-top: 4px;
+                margin-right: 10px;
+            }
+            
+        }
+
+        
+    }
+
+}
+
+.restaurant-card:hover{
+    // outline: 2px solid rgb(237, 237, 237);
+    // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    // box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}

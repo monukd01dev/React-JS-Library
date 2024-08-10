@@ -1,0 +1,23 @@
+.header{
+    // outline: 1px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+    margin: auto;
+    height: 115px;
+    gap: 50px;
+    img{
+        width: 150px;
+    }
+
+    .nav-items{
+        display: flex;
+        gap: 50px;
+
+        a{
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+    }
+}
