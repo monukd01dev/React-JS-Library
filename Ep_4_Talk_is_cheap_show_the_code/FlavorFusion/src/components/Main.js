@@ -3,7 +3,7 @@ import RestaurantCard from "./RestaurantCard";
 import restaurantsList from "../../utils/restaurantsMockData.json";
 
 const Main = () => {
-	let resList = [...restaurantsList];
+	const resList = [...restaurantsList];
 	// restaurantsList = [];it's readonly
 	return (
 		<div className="main">

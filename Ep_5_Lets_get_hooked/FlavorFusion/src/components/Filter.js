@@ -3,8 +3,7 @@ import restaurantsList from "../../utils/restaurantsMockData.json";
 import { useState } from "react";
 
 const Filter = () => {
-	// biome-ignore lint/style/useConst: <explanation>
-	let [resList, setResList] = useState(restaurantsList);
+	const [resList, setResList] = useState(restaurantsList);
 
 	return (
 		<div className="con">
@@ -27,7 +26,6 @@ const Filter = () => {
 							type="button"
 							className="static-btn"
 							onClick={() => {
-								console.log("clicked");
 								setResList(
 									restaurantsList
 										.filter(({ info }) => info.avgRating > 4)
