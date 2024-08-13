@@ -1,76 +1,86 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing:border-box;
-  }
-  body{
-    background-color: #fff;
-    font-family: arial;
-  }
-  #root{
-    max-width:1600px;
-    background-color: #fff;
-    min-height:100vh;
-    height:fit-content;
-    margin:10px auto;
-    display:grid;
-    grid-template-columns: repeat(auto-fit,376px);
-    gap:32px;
-    place-content:start center;
-    // padding:10px;
-  }
-  .card{
-    height:240px;
-    background-color:#eee;
-    width:100%;
-    border-radius:20px;
-    padding:1.5rem;
-    box-shadow: 0px 5px 5px rgba(0,0,0,0.5);
-    .upper-content{
-      display:flex;
-      align-items: center;
-      // justify-content: space-evenly;
-      gap : 20px;
-       .image-con{
-          width: 130px;
-          height: 130px;
-          border-radius: 100px;
-         overflow:hidden;
-         img{
-           width: 100%;
-           height: 100%;
-           object-fit:cover;
-         object-position:center;
-         }
-          // background:url('https://source.unsplash.com/random/?face');
-         //  background-position:center;
-         // background-size:cover;
-        }
-      .u-detail{
-        // outline:1px solid red;
-        height: 130px;
-        display:flex;
-        flex-direction:column;
-        justify-content: center;
-        row-gap:12px;
-        p{
-          font-size: 14px;
-          font-weight: bold;
-        }
-        
-        p:last-child{
-          font-style:italic;
-          font-weight: normal;
-        }
-        
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff;
+  font-family: arial;
+}
+
+#root {
+  max-width: 1600px;
+  background-color: #fff;
+  min-height: 100vh;
+  height: fit-content;
+  margin: 10px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 376px);
+  gap: 32px;
+  place-content: start center;
+  // padding:10px;
+}
+
+.card {
+  height: 240px;
+  background-color: #eee;
+  width: 100%;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
+
+  .upper-content {
+    display: flex;
+    align-items: center;
+    // justify-content: space-evenly;
+    gap: 20px;
+
+    .image-con {
+      width: 130px;
+      height: 130px;
+      border-radius: 100px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
       }
-      
+
+      // background:url('https://source.unsplash.com/random/?face');
+      //  background-position:center;
+      // background-size:cover;
     }
-    .about{
-      margin-top: 1rem;
-      font-size:17px;
-      line-height: 1.5;
-      text-align: center;
-      
+
+    .u-detail {
+      // outline:1px solid red;
+      height: 130px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      row-gap: 12px;
+
+      p {
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      p:last-child {
+        font-style: italic;
+        font-weight: normal;
+      }
+
     }
+
   }
+
+  .about {
+    margin-top: 1rem;
+    font-size: 17px;
+    line-height: 1.5;
+    text-align: center;
+
+  }
+}

@@ -1,0 +1,23 @@
+@use 'fonts' as f;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 100%;
+}
+
+body{
+    font-family: f.$font;
+
+    .app{
+        max-width: 1500px;
+        width: 95%;
+        height: fit-content;
+        margin: auto;
+    }
+}
+
