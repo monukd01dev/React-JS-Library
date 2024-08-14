@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom/client";
-import user from "./EmployeeMocData.json";
 import { Fragment, useState, useEffect } from "react";
+import SkeletonComponent from "./skeletonComponent";
 // console.log(Array.isArray(user));
 
 const ROOT = ReactDOM.createRoot(document.getElementById("root"));
@@ -31,17 +31,41 @@ const Card = (props) => {
 };
 
 function App() {
-	const [userList, setUserList] = useState([]);
+	const [userList, setUserList] = useState();
 
 	useEffect(() => {
-		getUser(10);
+		// setTimeout(() => {
+		// 	getUser(100);
+		// }, 2000);
+		getUser(2000);
 	}, []);
 
 	async function getUser(noUsers = 2) {
 		const data = await fetch(`https://randomuser.me/api/?results=${noUsers}`);
 		const users = await data.json();
-		setUserList(users.results);
+		setUserList(users?.results);
 	}
+
+	return (
+		<Fragment>
+			{userList ? (
+				<Fragment>
+					{userList.map((user, index) => (
+						// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+						<Card key={index} {...user} />
+					))}
+				</Fragment>
+			) : (
+				<SkeletonComponent />
+			)}
+		</Fragment>
+	);
+}
+
+ROOT.render(<App />);
+
+/*
+if (userList) return <SkeletonComponent />;
 
 	return (
 		<Fragment>
@@ -51,6 +75,4 @@ function App() {
 			))}
 		</Fragment>
 	);
-}
-
-ROOT.render(<App />);
+*/
