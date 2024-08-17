@@ -1,11 +1,12 @@
 import RestaurantCard from "./RestaurantCard";
-import restaurantsList from "../../utils/restaurantsMockData.json";
+import SkeletonCard from "./SkeletonCard";
+// import restaurantsList from "../../utils/restaurantsMockData.json";
 import { SWIGGY_API } from "../../utils/constants";
 import { useEffect, useState } from "react";
 
 const Filter = () => {
-	const [resList, setResList] = useState(restaurantsList);
-
+	const [resList, setResList] = useState([]);
+	const [resConstList, setResConstList] = useState([]);
 	useEffect(() => {
 		getRestaurants();
 	}, []);
@@ -14,8 +15,10 @@ const Filter = () => {
 		const response = await fetch(SWIGGY_API);
 		const data = await response.json();
 		const restaurantList =
-			data.data.cards[1].card.card.gridElements.infoWithStyle.restaurants;
-		console.log(restaurantList);
+			data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+				?.restaurants;
+		setResConstList(restaurantList);
+		setResList(restaurantList);
 	}
 
 	return (
@@ -30,7 +33,7 @@ const Filter = () => {
 							type="button"
 							className="static-btn"
 							onClick={() => {
-								setResList(restaurantsList);
+								setResList(resConstList);
 							}}
 						>
 							All
@@ -40,7 +43,7 @@ const Filter = () => {
 							className="static-btn"
 							onClick={() => {
 								setResList(
-									restaurantsList
+									resConstList
 										.filter(({ info }) => info.avgRating > 4)
 										.sort((a, b) => b.info.avgRating - a.info.avgRating),
 								);
@@ -56,7 +59,7 @@ const Filter = () => {
 									// [...restaurantsList].sort(
 									// 	(a, b) => a.info.sla.deliveryTime - b.info.sla.deliveryTime,
 									// ),
-									restaurantsList
+									resConstList
 										.filter(({ info }) => info.sla.deliveryTime < 30)
 										.sort(
 											(a, b) =>
@@ -85,9 +88,13 @@ const Filter = () => {
 				</div>
 			</div>
 			<div className="restaurant-container">
-				{resList.map((data) => (
-					<RestaurantCard key={data?.info?.id} {...data?.info} />
-				))}
+				{resList.length === 0
+					? new Array(16)
+							.fill(1)
+							.map((e, index) => <SkeletonCard key={index} />)
+					: resList.map((data) => (
+							<RestaurantCard key={data?.info?.id} {...data?.info} />
+						))}
 			</div>
 		</div>
 	);

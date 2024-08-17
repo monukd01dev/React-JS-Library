@@ -31,7 +31,7 @@ const RestaurantCard = (props) => {
 
 				<i className="fa-solid fa-circle __dot" />
 
-				<div className="__offer">₹{costForTwo} FOR TWO</div>
+				<div className="__offer">{costForTwo}</div>
 			</div>
 			<hr />
 			<div className="__discounts">
