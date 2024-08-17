@@ -1,9 +1,22 @@
 import RestaurantCard from "./RestaurantCard";
 import restaurantsList from "../../utils/restaurantsMockData.json";
-import { useState } from "react";
+import { SWIGGY_API } from "../../utils/constants";
+import { useEffect, useState } from "react";
 
 const Filter = () => {
 	const [resList, setResList] = useState(restaurantsList);
+
+	useEffect(() => {
+		getRestaurants();
+	}, []);
+
+	async function getRestaurants() {
+		const response = await fetch(SWIGGY_API);
+		const data = await response.json();
+		const restaurantList =
+			data.data.cards[1].card.card.gridElements.infoWithStyle.restaurants;
+		console.log(restaurantList);
+	}
 
 	return (
 		<div className="con">
