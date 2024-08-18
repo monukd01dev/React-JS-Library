@@ -7,7 +7,6 @@ function SkeletonCard() {
 				<div className="line shimmer" />
 				<div className="line shimmer" />
 				<div className="line shimmer" />
-				<div className="line shimmer" />
 			</div>
 		</div>
 	);
