@@ -8,12 +8,6 @@ const Filter = () => {
 	const [resConstList, setResConstList] = useState([]);
 	const [searchKey, setSearchKey] = useState("");
 
-	console.log("--------state-variables--------");
-	console.log("resList : ", resList);
-	console.log("resConstList : ", resConstList);
-	console.log("searchKey : ", searchKey);
-	console.log("---------end-variables---------\n");
-
 	useEffect(() => {
 		getRestaurants();
 	}, []);

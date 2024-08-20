@@ -36,4 +36,6 @@ const appRoutes = createBrowserRouter([
 	},
 ]);
 
+console.log(appRoutes);
+
 Root.render(<RouterProvider router={appRoutes} />);
