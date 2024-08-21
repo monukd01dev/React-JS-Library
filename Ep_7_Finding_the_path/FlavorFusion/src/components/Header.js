@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { FF_LOGO } from "../../utils/constants";
 
 const Header = () => (
@@ -6,12 +7,12 @@ const Header = () => (
 			<img src={FF_LOGO} alt="flavor fusion logo" />
 		</div>
 		<div className="nav-items">
-			<a href="#home">Home</a>
-			<a href="#home">Contact</a>
-			<a href="#home">About</a>
-			<a href="#home">
+			<Link to="/">Home</Link>
+			<Link to="/contact">Contact</Link>
+			<Link to="/about">About</Link>
+			<Link to="/cart">
 				<i className="fa-solid fa-cart-shopping" />
-			</a>
+			</Link>
 		</div>
 	</div>
 );
