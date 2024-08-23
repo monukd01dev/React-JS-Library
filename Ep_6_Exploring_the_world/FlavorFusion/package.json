@@ -4,7 +4,7 @@
   "description": "Food ordering website",
   "scripts": {
     "start": "parcel public/index.html",
-    "prodbuild": "parcel build index.html"
+    "prodbuild": "parcel build public/index.html"
   },
   "author": "@monukd01dev",
   "license": "ISC",

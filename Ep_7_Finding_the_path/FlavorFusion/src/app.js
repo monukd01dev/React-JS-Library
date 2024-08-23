@@ -16,51 +16,49 @@ const Root = ReactDOM.createRoot(document.getElementById("root"));
 const AppLayout = () => (
 	<div className="app">
 		<Header />
-		<Outlet />
+		<Main />
 	</div>
 );
 
 //basic routes
-// const appRoutes = createBrowserRouter([
-// 	{
-// 		path: "/",
-// 		element: <AppLayout />,
-// 		errorElement: <Error />,
-// 	},
-// 	{
-// 		path: "/about",
-// 		element: <About />,
-// 	},
-// 	{
-// 		path: "/contact",
-// 		element: <Contact />,
-// 	},
-// ]);
-
-// Children Routing to make header intact - using <Outlet/> component
-
 const appRoutes = createBrowserRouter([
 	{
 		path: "/",
 		element: <AppLayout />,
-		children: [
-			{
-				path: "/",
-				element: <Main />,
-			},
-			{
-				path: "/about",
-				element: <About />,
-			},
-			{
-				path: "/contact",
-				element: <Contact />,
-			},
-		],
 		errorElement: <Error />,
+	},
+	{
+		path: "/about",
+		element: <About />,
+	},
+	{
+		path: "/contact",
+		element: <Contact />,
 	},
 ]);
 
-console.log(appRoutes);
+// Children Routing to make header intact - using <Outlet/> component
+
+// const appRoutes = createBrowserRouter([
+// 	{
+// 		path: "/",
+// 		element: <AppLayout />,
+// 		children: [
+// 			{
+// 				path: "/",
+// 				element: <Main />,
+// 			},
+// 			{
+// 				path: "/about",
+// 				element: <About />,
+// 			},
+// 			{
+// 				path: "/contact",
+// 				element: <Contact />,
+// 			},
+// 		],
+// 		errorElement: <Error />,
+// 	},
+// ]);
 
 Root.render(<RouterProvider router={appRoutes} />);
