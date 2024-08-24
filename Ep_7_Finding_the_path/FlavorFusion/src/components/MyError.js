@@ -1,4 +1,4 @@
-function Error() {
+function MyError() {
 	return (
 		<div className="error-con">
 			<h1 style={{ color: "red", textAlign: "center", marginTop: "40px" }}>
@@ -9,4 +9,4 @@ function Error() {
 	);
 }
 
-export default Error;
+export default MyError;

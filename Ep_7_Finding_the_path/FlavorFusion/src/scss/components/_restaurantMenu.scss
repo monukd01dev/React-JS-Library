@@ -1,0 +1,151 @@
+.restaurant-menu-con {
+    max-width: 850px;
+    // outline: 1px solid black;
+    margin: auto;
+
+    .res-intro-con {
+        padding: 1rem;
+        //gradient
+        background: linear-gradient(rgb(255, 255, 255) -6.71%, rgb(235, 235, 242) 56.19%, rgb(223, 223, 231) 106.56%);
+        padding: 0px 16px 16px;
+        border-bottom-left-radius: 36px;
+        border-bottom-right-radius: 36px;
+
+        .res-name-big {
+            font-weight: 800;
+            font-size: 24px;
+            line-height: 28px;
+            letter-spacing: -0.4px;
+            color: rgba(2, 6, 12, 0.92);
+            margin-bottom: 1.4rem;
+        }
+
+        .res-details-top-con {
+            padding: 16px;
+            border-radius: 20px;
+            border: 1px solid rgba(2, 6, 12, 0.15);
+            background: white;
+            box-shadow: rgba(0, 0, 0, 0.04) 0px 8px 16px 0px;
+            overflow: hidden;
+
+            .rating-and-price {
+                display: flex;
+                font-weight: 700;
+                font-size: 1.1rem;
+                letter-spacing: -0.3px;
+                color: rgba(2, 6, 12, 0.92);
+                gap: 10px;
+                align-items: center;
+                justify-content: start;
+                line-height: 20px;
+                height: 20px;
+
+                i {
+                    color: #188d3d;
+                    margin-bottom: -2px;
+                    margin-right: -4px;
+                }
+
+                .__dot {
+                    font-size: 0.3rem;
+                    color: rgba(2, 6, 12, 0.45);
+
+                }
+            }
+
+            .dt-cuisines {
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 17px;
+                letter-spacing: -0.1px;
+                color: rgb(255, 82, 0);
+                margin: 8px 5px;
+                text-decoration: underline;
+            }
+
+            .dt-delivery {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                margin: 16px 5px;
+                font-weight: 400;
+                font-size: 14px;
+                letter-spacing: -0.3px;
+                color: rgba(2, 6, 12, 0.6);
+                text-transform: capitalize;
+
+                .__dot {
+                    font-size: 0.46rem;
+                    color: rgba(2, 6, 12, 0.45);
+
+                    line-height: 19px;
+                }
+
+                .row-delivery {
+
+                    display: flex;
+                    align-items: center;
+                    line-height: 19px;
+                    gap: 10px;
+
+                    .sp-text {
+                        font-weight: 700;
+                        font-size: 14px;
+                        letter-spacing: -0.3px;
+                        color: rgba(2, 6, 12, 0.92);
+                    }
+
+                    .__bar::after {
+                        content: " ";
+                        position: absolute;
+                        width: 24px;
+                        height: 1px;
+                        background-color: rgba(2, 6, 12, 0.45);
+                        outline: none;
+                        border: none;
+                        transform: rotate(90deg);
+                        top: 23px;
+                        left: -8px;
+                    }
+
+
+                }
+            }
+
+
+
+            hr {
+                position: relative;
+                border: none;
+                border-bottom: 1px solid rgba(2, 6, 12, 0.05);
+                margin: 12px 0px;
+                width: 110%;
+                left: -25px;
+            }
+
+            .dt-rider {
+                font-weight: 500;
+                font-size: 14px;
+                display: flex;
+                text-align: center;
+                justify-content: start;
+                line-height: 16px;
+                letter-spacing: -0.3px;
+                color: rgba(2, 6, 12, 0.6);
+
+                i {
+                    font-size: 16px;
+                    transform: rotate(-12deg);
+                    margin-right: 10px;
+                }
+
+                .kms {
+                    font-weight: 700;
+                    margin-right: 5px;
+                }
+            }
+        }
+
+    }
+}
