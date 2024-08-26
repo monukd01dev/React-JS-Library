@@ -2,6 +2,7 @@ import { RESTAURANT_MENU_API } from "../../utils/constants";
 import { useEffect, useState } from "react";
 import ResMenuShimmer from "./ResMenuShimmer";
 import { useParams } from "react-router-dom";
+import AccordionMenu from "./AccordionMenu";
 
 //got info from here
 //data.cards[2].card.card.info
@@ -75,6 +76,15 @@ function RestaurantMenu() {
 					</div>
 				</div>
 			</div>
+			<div className="menu-head">
+				<i class="fi fi-rr-horizontal-rule" />
+				<span>menu</span>
+				<i class="fi fi-rr-horizontal-rule" />
+			</div>
+
+			<hr />
+
+			<AccordionMenu />
 		</div>
 	);
 }

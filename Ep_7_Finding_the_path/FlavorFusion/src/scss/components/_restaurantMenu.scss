@@ -153,4 +153,33 @@
         }
 
     }
+
+    .menu-head {
+        margin: 20px auto;
+        text-align: center;
+
+        span {
+            margin: 0px 4px;
+            letter-spacing: 4px;
+            font-weight: 400;
+            font-size: 16px;
+            text-transform: uppercase;
+            margin: 0px 10px;
+        }
+
+        i {
+            position: relative;
+            top: 2.5px;
+
+        }
+    }
+
+    hr {
+        width: 95%;
+        margin: auto;
+        margin-bottom: 28px;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid rgba(76, 75, 75, 0.6);
+    }
 }

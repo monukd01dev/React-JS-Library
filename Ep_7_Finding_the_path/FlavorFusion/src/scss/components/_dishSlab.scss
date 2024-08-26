@@ -1,0 +1,97 @@
+.dish-slab-con {
+
+    padding: 30px 0 50px;
+    border-bottom: .5px solid #d3d3d3;
+
+
+    .slab {
+        display: flex;
+        justify-content: space-between;
+        // outline: 1px solid blue;
+
+        .left {
+            flex-basis: 70%;
+
+            .content {
+                .dish-name {
+                    margin-bottom: 0;
+                    font-weight: 700;
+                    font-size: 18px;
+                    letter-spacing: -0.3px;
+                }
+
+                .dish-price {
+                    margin-top: 4px;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 19px;
+                    letter-spacing: -0.3px;
+                    color: rgba(2, 6, 12, 0.92);
+                }
+
+                .dish-rating {
+                    margin-top: 12px;
+                    font-weight: 700;
+                    font-size: 14px;
+                    line-height: 16px;
+                    letter-spacing: -0.1px;
+                }
+
+                .dish-description {
+                    margin-top: 12px;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 19px;
+                    letter-spacing: -0.1px;
+                    color: rgba(2, 6, 12, 0.6);
+                }
+            }
+
+        }
+
+
+        .right {
+            flex-basis: 25%;
+
+
+            .img-con {
+                margin-left: auto;
+                // outline: 1px solid green;
+                width: 157px;
+                height: 144px;
+                position: relative;
+                border-radius: 12px;
+
+                z-index: 1;
+
+                img {
+                    width: 100%;
+                    height: inherit;
+                    object-fit: cover;
+                    object-position: center;
+                    border-radius: 12px;
+
+                }
+
+                .img-con-btn {
+                    position: absolute;
+                    top: 100%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    font-weight: 800;
+                    font-size: 18px;
+                    line-height: 24px;
+                    text-transform: uppercase;
+                    color: rgb(27, 166, 114);
+                    background: rgb(255, 255, 255);
+                    border: 1px solid rgba(2, 6, 12, 0.15);
+                    height: 40px;
+                    border-radius: 8px;
+                    width: 120px;
+                    box-shadow: rgba(40, 44, 63, 0.08) 0px 3px 8px;
+                    z-index: 5;
+                }
+            }
+        }
+    }
+}
