@@ -51,7 +51,14 @@ function RestaurantMenu() {
 					<div className="dt-delivery">
 						<div className="row-delivery">
 							<i className="fa-solid fa-circle __dot" />{" "}
-							<span className="sp-text">Outlet</span> {areaName}
+							<span className="sp-text ">Outlet</span>{" "}
+							{areaName
+								.split(" ")
+								.map(
+									(e) =>
+										e.charAt(0).toUpperCase() + e.slice(1).toLocaleLowerCase(),
+								)
+								.join(" ")}
 						</div>
 						<div className="row-delivery">
 							<i className="fa-solid fa-circle __dot __bar" />{" "}
