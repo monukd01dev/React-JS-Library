@@ -9,6 +9,7 @@ import AccordionMenu from "./AccordionMenu";
 
 function RestaurantMenu() {
 	const [resDetails, setResDetails] = useState(null);
+	const [accordionList, setAccordionList] = useState([]);
 	const { resId } = useParams();
 
 	useEffect(() => {
@@ -20,6 +21,9 @@ function RestaurantMenu() {
 		const response = await fetch(RESTAURANT_MENU_API + resId);
 		const data = await response.json();
 		setResDetails(data?.data?.cards[2]?.card?.card?.info);
+		setAccordionList(
+			data?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.slice(2),
+		);
 	};
 
 	if (resDetails === null) return <ResMenuShimmer />;
@@ -46,7 +50,7 @@ function RestaurantMenu() {
 							{avgRating} ({totalRatingsString})
 						</p>
 						<i className="fa-solid fa-circle __dot" />
-						<p>{costForTwoMessage}</p>
+						<p>{costForTwoMessage.toUpperCase()}</p>
 					</div>
 					<div className="dt-cuisines">{cuisines?.join(", ")}</div>
 					<div className="dt-delivery">
@@ -84,7 +88,16 @@ function RestaurantMenu() {
 
 			<hr />
 
-			<AccordionMenu />
+			{accordionList
+				.filter((e) => Array.isArray(e?.card?.card?.itemCards))
+				.map((e) => {
+					return (
+						<AccordionMenu
+							key={crypto.randomUUID()}
+							accordionData={e?.card?.card}
+						/>
+					);
+				})}
 		</div>
 	);
 }

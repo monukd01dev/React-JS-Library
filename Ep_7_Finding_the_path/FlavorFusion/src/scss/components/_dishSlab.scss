@@ -13,6 +13,20 @@
             flex-basis: 70%;
 
             .content {
+
+                .dish-cat {
+                    font-size: large;
+                    margin-bottom: 4px;
+
+                    .__veg {
+                        color: #0f8a65;
+                    }
+
+                    .__non-veg {
+                        color: red;
+                    }
+                }
+
                 .dish-name {
                     margin-bottom: 0;
                     font-weight: 700;
@@ -21,29 +35,42 @@
                 }
 
                 .dish-price {
-                    margin-top: 4px;
-                    font-weight: 400;
+                    margin-top: 2px;
+                    font-weight: 600;
                     font-size: 16px;
-                    line-height: 19px;
+
                     letter-spacing: -0.3px;
                     color: rgba(2, 6, 12, 0.92);
                 }
 
                 .dish-rating {
                     margin-top: 12px;
+                    margin-bottom: 12px;
                     font-weight: 700;
                     font-size: 14px;
-                    line-height: 16px;
+
                     letter-spacing: -0.1px;
+
+                    .star {
+                        font-size: 11px;
+                        position: relative;
+                        top: -2px;
+                        color: #1ba672;
+                    }
+
+                    .rating {
+                        font-size: 16px;
+                        color: rgb(27, 166, 114);
+                        margin-left: 2px;
+                    }
                 }
 
                 .dish-description {
-                    margin-top: 12px;
-                    font-weight: 400;
+                    font-weight: 500;
                     font-size: 16px;
                     line-height: 19px;
                     letter-spacing: -0.1px;
-                    color: rgba(2, 6, 12, 0.6);
+                    color: rgba(1, 3, 7, 0.6);
                 }
             }
 
@@ -61,8 +88,6 @@
                 height: 144px;
                 position: relative;
                 border-radius: 12px;
-
-                z-index: 1;
 
                 img {
                     width: 100%;
@@ -89,7 +114,12 @@
                     border-radius: 8px;
                     width: 120px;
                     box-shadow: rgba(40, 44, 63, 0.08) 0px 3px 8px;
-                    z-index: 5;
+                    transition: 100ms ease-in-out;
+
+                }
+
+                .img-con-btn:hover {
+                    background-color: #d9dadb;
                 }
             }
         }
