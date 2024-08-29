@@ -1,5 +1,3 @@
-// import Search from "./Search";
-
 import Filter from "./Filter";
 
 const Main = () => {

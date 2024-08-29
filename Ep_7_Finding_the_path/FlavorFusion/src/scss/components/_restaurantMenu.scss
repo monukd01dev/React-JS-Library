@@ -182,4 +182,8 @@
         outline: none;
         border-bottom: 1px solid rgba(76, 75, 75, 0.6);
     }
+
+    .accordion:first-child {
+        width: 100px;
+    }
 }

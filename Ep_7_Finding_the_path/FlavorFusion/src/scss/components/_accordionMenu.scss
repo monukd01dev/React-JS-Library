@@ -7,6 +7,8 @@
     overflow: hidden;
     transition: height 0.4s;
     border-bottom: 16px solid rgba(2, 6, 12, .0509803922);
+    margin-bottom: 20px;
+
 
     .acrdino-name {
         display: flex;
@@ -36,9 +38,8 @@
     }
 }
 
-// .accordino:hover{
-// 	height: 400px;
-// }
+
+
 .chevbtn {
     transform: rotate(-180deg);
 }

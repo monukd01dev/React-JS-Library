@@ -21,7 +21,6 @@ const Filter = () => {
 				?.restaurants;
 		setResConstList(restaurantList);
 		setResList(restaurantList);
-		console.log("useEffect----> runned");
 	}
 
 	return (

@@ -41,6 +41,18 @@
 
                     letter-spacing: -0.3px;
                     color: rgba(2, 6, 12, 0.92);
+
+                    .strike-price {
+                        text-decoration: line-through;
+                        font-weight: 500;
+                        margin-right: 4px;
+                        color: rgba(2, 6, 12, 0.45);
+                    }
+
+                    i {
+                        display: inline-block;
+                        transform: rotate(90deg);
+                    }
                 }
 
                 .dish-rating {
@@ -62,7 +74,15 @@
                         font-size: 16px;
                         color: rgb(27, 166, 114);
                         margin-left: 2px;
+                        margin-right: 0.9px;
                     }
+
+                    .rating-count {
+                        font-weight: 500;
+                        letter-spacing: -0.9px;
+                        color: rgba(2, 6, 12, 0.6);
+                    }
+
                 }
 
                 .dish-description {
@@ -85,13 +105,18 @@
                 margin-left: auto;
                 // outline: 1px solid green;
                 width: 157px;
-                height: 144px;
+
                 position: relative;
                 border-radius: 12px;
 
+                .empty-saver {
+                    width: 157px;
+                    height: 40px;
+                }
+
                 img {
                     width: 100%;
-                    height: inherit;
+                    height: 144px;
                     object-fit: cover;
                     object-position: center;
                     border-radius: 12px;
@@ -124,4 +149,8 @@
             }
         }
     }
+}
+
+.dish-slab-con:last-child {
+    border-bottom: none;
 }

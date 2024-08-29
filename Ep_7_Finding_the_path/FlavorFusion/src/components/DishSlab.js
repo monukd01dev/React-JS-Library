@@ -6,6 +6,8 @@ const DishSlab = ({ dishSlabData }) => {
 		description,
 		defaultPrice,
 		price,
+		finalPrice,
+		offerTags,
 		ratings,
 		itemAttribute,
 		imageId,
@@ -24,16 +26,41 @@ const DishSlab = ({ dishSlabData }) => {
 							)}
 						</div>
 						<div className="dish-name">{name}</div>
-						<div className="dish-price">₹ {(defaultPrice || price) / 100}</div>
+						<div className="dish-price">
+							{finalPrice ? (
+								<>
+									<span className="strike-price">
+										₹{(defaultPrice || price) / 100}
+									</span>{" "}
+									₹{finalPrice / 100}
+								</>
+							) : (
+								<>₹ {(defaultPrice || price) / 100}</>
+							)}
+							{offerTags ? (
+								<>
+									{" "}
+									<i className="fa-solid fa-tag" />
+									<span className="offer-title">{offerTags[0]?.title}</span>
+									<span className="offer-subtitle">
+										{offerTags[0]?.subTitle}
+									</span>
+								</>
+							) : (
+								""
+							)}
+						</div>
 						<div className="dish-rating">
 							{ratings?.aggregatedRating?.rating ? (
 								<>
 									<i className="fa-solid fa-star star" />
 									<span className="rating">
 										{" "}
-										{ratings?.aggregatedRating?.rating}{" "}
+										{ratings?.aggregatedRating?.rating}
 									</span>
-									({ratings?.aggregatedRating?.ratingCountV2})
+									<span className="rating-count">
+										({ratings?.aggregatedRating?.ratingCountV2})
+									</span>
 								</>
 							) : (
 								""
@@ -50,7 +77,11 @@ const DishSlab = ({ dishSlabData }) => {
 				</div>
 				<div className="right">
 					<div className="img-con">
-						<img src={`${DISH_SLAB_IMG_URL}${imageId}`} alt="" />
+						{imageId ? (
+							<img src={`${DISH_SLAB_IMG_URL}${imageId}`} alt="" />
+						) : (
+							<div className="empty-saver" />
+						)}
 						<button type="button" className="img-con-btn">
 							add
 						</button>

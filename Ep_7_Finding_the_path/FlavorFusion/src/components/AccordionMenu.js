@@ -1,9 +1,13 @@
+import { useEffect } from "react";
 import DishSlab from "./DishSlab";
 
 const AccordionMenu = ({ accordionData }) => {
 	const { title, itemCards } = accordionData;
 
-	console.log(Array.isArray(itemCards));
+	useEffect(() => {
+		document.querySelector(".accordion").classList.toggle("acrd-on");
+	}, []);
+
 	return (
 		<div className="accordion">
 			<div className="acrdino-name">
@@ -16,12 +20,14 @@ const AccordionMenu = ({ accordionData }) => {
 					className="chevronBtn"
 					onClick={(e) => {
 						e.target.classList.toggle("chevbtn");
-						// const baap = document.querySelector(".accordion");
+						// const baap = document.querySelector(".accordion");//this is commented cause it's globally selecting the .accordion element and querrySelector gives the first match that's why closing effect only working for 1st accordion
+
+						// and this one is traversing with the help of target{chevbtn} so it's work for specific one
 						const baap = e.target.parentElement.parentElement.parentElement;
 						baap.classList.toggle("acrd-on");
 					}}
 				>
-					<i class="fa-solid fa-chevron-up" />
+					<i className="fa-solid fa-chevron-up" />
 				</button>
 			</div>
 			{itemCards.map((e) => {
