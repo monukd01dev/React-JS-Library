@@ -16,7 +16,6 @@
 
                 .dish-cat {
                     font-size: large;
-                    margin-bottom: 4px;
 
                     .__veg {
                         color: #0f8a65;
@@ -25,17 +24,25 @@
                     .__non-veg {
                         color: red;
                     }
+
+                    span.ribbon {
+                        margin-left: 5px;
+                        font-size: 16px;
+                        letter-spacing: -0.1px;
+                        font-weight: 700;
+                        color: #ff6e5a;
+                    }
                 }
 
                 .dish-name {
-                    margin-bottom: 0;
                     font-weight: 700;
-                    font-size: 18px;
+                    font-size: 20px;
                     letter-spacing: -0.3px;
                 }
 
                 .dish-price {
-                    margin-top: 2px;
+                    margin-top: 4px;
+                    margin-left: 2px;
                     font-weight: 600;
                     font-size: 16px;
 
@@ -52,6 +59,21 @@
                     i {
                         display: inline-block;
                         transform: rotate(90deg);
+                        font-size: 14px;
+                        margin-right: 4px;
+                        margin-left: 3px;
+                        position: relative;
+                        top: 2px;
+                        color: #1ba672;
+                    }
+
+                    .offer-title,
+                    .offer-subtitle {
+                        font-weight: 800;
+                        font-size: 12px;
+                        line-height: 12px;
+                        letter-spacing: -0.3px;
+                        color: rgba(2, 6, 12, 0.6);
                     }
                 }
 
@@ -133,9 +155,9 @@
                     line-height: 24px;
                     text-transform: uppercase;
                     color: rgb(27, 166, 114);
+                    height: 40px;
                     background: rgb(255, 255, 255);
                     border: 1px solid rgba(2, 6, 12, 0.15);
-                    height: 40px;
                     border-radius: 8px;
                     width: 120px;
                     box-shadow: rgba(40, 44, 63, 0.08) 0px 3px 8px;

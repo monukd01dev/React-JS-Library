@@ -1,5 +1,6 @@
-.header{
+.header {
     // outline: 1px solid red;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -7,17 +8,24 @@
     margin: auto;
     height: 115px;
     gap: 50px;
-    img{
+    // for sticky
+    // position: sticky;
+    // top: 0;
+    // background-color: #fff;
+    // z-index: 20;
+
+    img {
         width: 150px;
     }
 
-    .nav-items{
+    .nav-items {
         display: flex;
         gap: 50px;
 
-        a{
+        a {
             font-size: 1.3rem;
             font-weight: 600;
         }
     }
+
 }

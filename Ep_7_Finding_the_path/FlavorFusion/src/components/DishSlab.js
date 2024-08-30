@@ -2,6 +2,7 @@ import { DISH_SLAB_IMG_URL } from "../../utils/constants";
 
 const DishSlab = ({ dishSlabData }) => {
 	const {
+		ribbon,
 		name,
 		description,
 		defaultPrice,
@@ -24,6 +25,7 @@ const DishSlab = ({ dishSlabData }) => {
 							) : (
 								<i className="fa-solid fa-square-caret-up __veg" />
 							)}
+							{ribbon ? <span className="ribbon">{ribbon?.text}</span> : ""}
 						</div>
 						<div className="dish-name">{name}</div>
 						<div className="dish-price">
@@ -37,11 +39,11 @@ const DishSlab = ({ dishSlabData }) => {
 							) : (
 								<>₹ {(defaultPrice || price) / 100}</>
 							)}
-							{offerTags ? (
+							{offerTags?.[0].title ? (
 								<>
 									{" "}
 									<i className="fa-solid fa-tag" />
-									<span className="offer-title">{offerTags[0]?.title}</span>
+									<span className="offer-title">{offerTags[0]?.title}</span>{" "}
 									<span className="offer-subtitle">
 										{offerTags[0]?.subTitle}
 									</span>

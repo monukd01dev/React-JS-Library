@@ -4,12 +4,14 @@ import DishSlab from "./DishSlab";
 const AccordionMenu = ({ accordionData }) => {
 	const { title, itemCards } = accordionData;
 
-	useEffect(() => {
-		document.querySelector(".accordion").classList.toggle("acrd-on");
-	}, []);
+	//on the first accordion on the first render only remove the empty array from the dependency to run on every re-render
+	// useEffect(() => {
+	// document.querySelector(".accordion").classList.toggle("acrd-on");
+
+	// }, []);
 
 	return (
-		<div className="accordion">
+		<div className="accordion acrd-on">
 			<div className="acrdino-name">
 				{" "}
 				<h3>
