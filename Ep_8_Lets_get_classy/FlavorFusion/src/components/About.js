@@ -1,0 +1,17 @@
+import UserClass from "./UserClass";
+import UserCard from "./UserCard";
+
+function About() {
+	return (
+		<div className="about-con">
+			<h1>About-Page</h1>
+			<div className="user-card-con">
+				<UserClass name={"Monu KD"} stack={"Java Developer"} />
+				<UserClass name={"Monu Kumar"} stack={"Mern Developer"} />
+				<UserCard name={"raj"} email={"raj@gmail.com"} />
+			</div>
+		</div>
+	);
+}
+
+export default About;
