@@ -31,6 +31,10 @@ class UserCard extends React.Component {
 			</>
 		);
 	}
+
+	componentDidMount() {
+		console.log("UserCard : componentDidMount()");
+	}
 }
 
 export default UserCard;
