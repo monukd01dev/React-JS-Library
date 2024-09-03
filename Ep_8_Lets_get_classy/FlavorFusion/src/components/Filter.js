@@ -55,7 +55,7 @@ const Filter = () => {
 			<div className="con">
 				<div className="filter">
 					<div className="total-restaurants">
-						<h2>{resList.length} Restaurants</h2>
+						<h2>{resList.length || 0} Restaurants</h2>
 					</div>
 					<div className="filter-items">
 						<div className="static-filters">

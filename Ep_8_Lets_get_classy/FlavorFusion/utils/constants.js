@@ -9,3 +9,13 @@ export const RESTAURANT_MENU_API =
 
 export const DISH_SLAB_IMG_URL =
 	"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/";
+
+export const GITHUB_USER_API = "https://api.github.com/users/";
+
+export const social = {
+	GITHUB: "https://github.com/monukd01dev",
+	LINKEDIN: "https://www.linkedin.com/in/monukd01dev/",
+	TWITTER: "https://x.com/monukd01dev",
+	INSTAGRAM: "https://www.instagram.com/monukd01dev/",
+	STACKOVERFLOW: "https://stackoverflow.com/users/22429918/monukd01dev",
+};

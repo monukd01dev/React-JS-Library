@@ -1,4 +1,8 @@
 /* From Uiverse.io by abrahamcalsin */
+$border-light : #6785fe;
+$border-light : #b4bee3;
+$bg-dark : #1d1f2a;
+
 .user-card-con {
     margin-top: 30px;
     display: grid;
@@ -6,43 +10,48 @@
     gap: 20px;
 
     .card-client {
-        background: #2cb5a0;
+        perspective: 900px;
+        background: $bg-dark;
         width: 13rem;
         padding-top: 25px;
         padding-bottom: 25px;
         padding-left: 20px;
         padding-right: 20px;
-        border: 4px solid #7cdacc;
+        border: 4px solid $border-light;
         box-shadow: 0 6px 10px rgba(207, 212, 222, 1);
         border-radius: 10px;
         text-align: center;
         color: #fff;
         font-family: "Poppins", sans-serif;
-        transition: all 0.3s ease;
+        transition: all 1s ease;
     }
 
     .card-client:hover {
         transform: translateY(-10px);
+        // transform: rotate3d(1, 0, 0, 90deg);
+        // transform: rotate3d(1, 0, 1, -45deg);
+        // transform: rotate3d(0, 0, 1, 90deg);
     }
 
 
     .user-picture {
         overflow: hidden;
         object-fit: cover;
-        width: 5rem;
-        height: 5rem;
-        border: 4px solid #7cdacc;
+        width: 6rem;
+        height: 6rem;
+        border: 4px solid $border-light;
         border-radius: 999px;
         display: flex;
         justify-content: center;
         align-items: center;
         margin: auto;
+
+        img {
+            width: 100%;
+        }
     }
 
-    .user-picture svg {
-        width: 2.5rem;
-        fill: currentColor;
-    }
+
 
     .name-client {
         margin: 0;
@@ -64,7 +73,7 @@
         width: 100%;
         height: 2px;
         margin: 20px 0;
-        background: #7cdacc;
+        background: $border-light;
     }
 
     .social-media a {

@@ -6,9 +6,8 @@ function About() {
 		<div className="about-con">
 			<h1>About-Page</h1>
 			<div className="user-card-con">
-				<UserClass name={"Monu KD"} stack={"Java Developer"} />
-				<UserClass name={"Monu Kumar"} stack={"Mern Developer"} />
-				<UserCard name={"raj"} email={"raj@gmail.com"} />
+				{/* <UserClass name={"Monu KD"} stack={"Java Developer"} /> */}
+				<UserClass />
 			</div>
 		</div>
 	);
