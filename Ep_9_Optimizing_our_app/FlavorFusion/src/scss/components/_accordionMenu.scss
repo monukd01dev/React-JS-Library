@@ -1,0 +1,49 @@
+.accordion {
+    font-family: "Figtree", sans-serif;
+    // outline: 1px solid black;
+    max-width: 800px;
+    margin: auto;
+    height: 42px;
+    overflow: hidden;
+    transition: height 0.4s;
+    border-bottom: 16px solid rgba(2, 6, 12, .0509803922);
+    margin-bottom: 20px;
+
+
+    .acrdino-name {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        // outline: 1px solid red;
+
+        h3 {
+            font-weight: 800;
+            font-size: 18px;
+            letter-spacing: -0.3px;
+        }
+
+        button {
+            margin-right: 15px;
+            font-size: 18px;
+            outline: none;
+            border: none;
+            background: none;
+            cursor: pointer;
+
+            i {
+                display: inline-block;
+
+            }
+        }
+    }
+}
+
+
+
+.chevbtn {
+    transform: rotate(-180deg);
+}
+
+.acrd-on {
+    height: fit-content;
+}
