@@ -1,16 +1,25 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 //importing components
 import Header from "./components/Header";
 import Main from "./components/Main";
+import ResMenuShimmer from "./components/ResMenuShimmer";
 //pages
-import About from "./components/About";
 import Contact from "./components/Contact";
 import MyError from "./components/MyError";
+// import RestaurantMenu from "./components/RestaurantMenu";
+const RestaurantMenu = lazy(() => import('./components/RestaurantMenu'));
+
+// * making About lazy-loading, dynamic import
+// import About from "./components/About";
+// ? 1. lazy(()=> import("./components/About"))
+// ? 2. <Suspence fallback={/* yaha simmer dete hai */}></Suspence>
+
+// ! let's see the code
+const About = lazy(() => import("./components/About"));
 
 //react-rounter code
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import RestaurantMenu from "./components/RestaurantMenu";
 
 const Root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -21,25 +30,6 @@ const AppLayout = () => (
 		<Outlet />
 	</div>
 );
-
-//basic routes
-// const appRoutes = createBrowserRouter([
-// 	{
-// 		path: "/",
-// 		element: <AppLayout />,
-// 		errorElement: <Error />,
-// 	},
-// 	{
-// 		path: "/about",
-// 		element: <About />,
-// 	},
-// 	{
-// 		path: "/contact",
-// 		element: <Contact />,
-// 	},
-// ]);
-
-// Children Routing to make header intact - using <Outlet/> component
 
 const appRoutes = createBrowserRouter([
 	{
@@ -52,7 +42,9 @@ const appRoutes = createBrowserRouter([
 			},
 			{
 				path: "/about",
-				element: <About />,
+				element: <Suspense fallback={<ResMenuShimmer/>}>
+					<About />
+				</Suspense>,
 			},
 			{
 				path: "/contact",
@@ -60,7 +52,9 @@ const appRoutes = createBrowserRouter([
 			},
 			{
 				path: "/restaurant/:resId",
-				element: <RestaurantMenu />,
+				element: <Suspense fallback={<ResMenuShimmer/>}>
+				<RestaurantMenu />
+			</Suspense>,
 			},
 		],
 		errorElement: <MyError />,

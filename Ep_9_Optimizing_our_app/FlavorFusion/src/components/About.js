@@ -4,7 +4,6 @@ import NoInternet from "./NoInternet";
 function About() {
 	const onlineStatus = useOnlineStatus();
 
-	console.log(`About : OnlineStatus : ${onlineStatus}`);
 	if (!onlineStatus) return <NoInternet />;
 	return (
 		<div className="about-con">
