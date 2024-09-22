@@ -1,0 +1,255 @@
+@use '../base/fonts' as font;
+
+.restaurant-menu-con {
+    max-width: 850px;
+    // outline: 1px solid black;
+    margin: auto;
+    font-family: font.$font-Questrial;
+
+    .res-intro-con {
+        padding: 1rem;
+        //gradient
+        background: linear-gradient(rgb(255, 255, 255) -6.71%, rgb(235, 235, 242) 56.19%, rgb(223, 223, 231) 106.56%);
+        padding: 0px 16px 16px;
+        border-bottom-left-radius: 36px;
+        border-bottom-right-radius: 36px;
+
+        .res-name-big {
+            font-weight: 800;
+            font-size: 24px;
+            line-height: 28px;
+            letter-spacing: -0.4px;
+            color: rgba(2, 6, 12, 0.92);
+            margin-bottom: 1.4rem;
+        }
+
+        .res-details-top-con {
+            padding: 16px;
+            border-radius: 20px;
+            border: 1px solid rgba(2, 6, 12, 0.15);
+            background: white;
+            box-shadow: rgba(0, 0, 0, 0.04) 0px 8px 16px 0px;
+            overflow: hidden;
+
+            .rating-and-price {
+                display: flex;
+                font-weight: 700;
+                font-size: 1.1rem;
+                letter-spacing: -0.3px;
+                color: rgba(2, 6, 12, 0.92);
+                gap: 10px;
+                align-items: center;
+                justify-content: start;
+                line-height: 20px;
+                height: 20px;
+
+                i {
+                    color: #188d3d;
+                    margin-bottom: -2px;
+                    margin-right: -4px;
+                }
+
+                .__dot {
+                    font-size: 0.3rem;
+                    color: rgba(2, 6, 12, 0.45);
+
+                }
+            }
+
+            .dt-cuisines {
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 17px;
+                letter-spacing: -0.1px;
+                color: rgb(255, 82, 0);
+                margin: 8px 5px;
+                text-decoration: underline;
+                cursor: pointer;
+            }
+
+            .dt-delivery {
+                display: flex;
+                align-items: center;
+                text-transform: capitalize;
+                gap: 10px;
+                margin-top: 7px;
+                margin-bottom: 7px;
+                margin-left: 6px;
+
+
+                .left-dot {
+                    display: flex;
+                    flex-direction: column;
+                    -webkit-box-align: center;
+                    align-items: center;
+
+                    .__dot {
+                        height: 7px;
+                        width: 7px;
+                        background: rgb(196, 196, 196);
+                        border-radius: 50%;
+                        position: relative;
+
+                    }
+
+                    .__bar {
+                        width: 1px;
+                        height: 22px;
+                        background: rgb(196, 196, 196);
+                    }
+
+
+
+
+                }
+
+                .right-delivery-info {
+                    display: flex;
+                    gap: 10px;
+                    flex-direction: column;
+
+                    .sp-text {
+                        font-weight: 900;
+                        font-size: 14px;
+                        line-height: 18px;
+                        color: rgba(2, 6, 12, 0.92);
+                        margin-right: 8px;
+                    }
+                }
+
+
+
+
+
+
+            }
+
+
+
+            hr {
+                position: relative;
+                border: none;
+                border-bottom: 1px solid rgba(2, 6, 12, 0.05);
+                margin: 12px 0px;
+                width: 110%;
+                left: -25px;
+            }
+
+            .dt-rider {
+                font-weight: 600;
+                font-size: 14px;
+                display: flex;
+                text-align: center;
+                justify-content: start;
+                line-height: 16px;
+                letter-spacing: -0.3px;
+                color: rgba(2, 6, 12, 0.6);
+
+                i {
+                    font-size: 16px;
+                    transform: rotate(-12deg);
+                    margin-right: 10px;
+                }
+
+                .kms {
+                    font-weight: 700;
+                    margin-right: 5px;
+                }
+            }
+        }
+
+    }
+
+    .sticky-heads {
+        position: sticky;
+        // top:115px;
+        top: 0;
+        z-index: 10;
+        background-color: #fff;
+
+        .menu-head {
+
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+
+            span {
+                margin: 0px 4px;
+                letter-spacing: 4px;
+                font-weight: 400;
+                font-size: 16px;
+                text-transform: uppercase;
+                margin: 0px 10px;
+            }
+
+            i {
+                position: relative;
+                top: 2.5px;
+
+            }
+        }
+
+        hr {
+            width: 95%;
+            margin: auto;
+            margin-bottom: 28px;
+            border: none;
+            outline: none;
+            border-bottom: 1px solid rgba(76, 75, 75, 0.6);
+        }
+
+        .filter-con {
+            position: sticky;
+            top: calc(width);
+            // outline: 1px solid black;
+            padding: 0px 20px 25px;
+            display: flex;
+            gap: 20px;
+
+            button {
+                padding: 8px 20px;
+                outline: none;
+                font-size: 14px;
+                font-weight: 700;
+                border-radius: 25px;
+                background: rgb(255, 255, 255);
+                border: 1px solid rgba(2, 6, 12, 0.15);
+                border-radius: 25px;
+                box-shadow: rgba(40, 44, 63, 0.08) 0px 3px 8px;
+                transition: 100ms ease-in-out;
+            }
+
+            button:first-child:hover {
+                background-color: #64b5f6;
+                color: white;
+            }
+
+            button:nth-child(2):hover {
+                background-color: #59cd90;
+                color: white;
+            }
+
+            button:last-child:hover {
+                background-color: #f65434;
+                color: white;
+            }
+
+            // button:first-child:hover {
+            //     background-color: #64b5f6 !important;
+            //     color: white !important;
+            // }
+
+            // button:nth-child(2):hover {
+            //     background-color: #59cd90 !important;
+            //     color: white !important;
+            // }
+
+            // button:last-child:hover {
+            //     background-color: #f65434 !important;
+            //     color: white !important;
+            // }
+
+
+        }
+    }
+}
