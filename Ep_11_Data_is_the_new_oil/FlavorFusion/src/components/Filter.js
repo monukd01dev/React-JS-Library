@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { promoteRestroCard } from "./RestaurantCard";
 import SkeletonCard from "./SkeletonCard";
 import { Link } from "react-router-dom";
 import useRestaurantList from "../../utils/useRestaurantList";
@@ -7,6 +7,7 @@ const Filter = () => {
 	const { resList, setResList, resConstList, searchKey, setSearchKey } =
 		useRestaurantList();
 
+	const PromotedRestroCard = promoteRestroCard(RestaurantCard);
 	return (
 		<>
 			<div className="search-con">
@@ -70,9 +71,6 @@ const Filter = () => {
 								className="static-btn"
 								onClick={() => {
 									setResList(
-										// [...restaurantsList].sort(
-										// 	(a, b) => a.info.sla.deliveryTime - b.info.sla.deliveryTime,
-										// ),
 										resConstList
 											.filter(({ info }) => info.sla.deliveryTime < 30)
 											.sort(
@@ -102,7 +100,11 @@ const Filter = () => {
 								.map((e) => <SkeletonCard key={crypto.randomUUID()} />)
 						: resList.map((data) => (
 								<Link to={`/restaurant/${data?.info?.id}`} key={data?.info?.id}>
-									<RestaurantCard {...data?.info} />
+									{data?.info?.veg ? (
+										<PromotedRestroCard {...data?.info} />
+									) : (
+										<RestaurantCard {...data?.info} />
+									)}
 								</Link>
 							))}
 				</div>

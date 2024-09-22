@@ -8,8 +8,16 @@ import NoInternet from "./NoInternet";
 function RestaurantMenu() {
 	const onlineStatus = useOnlineStatus();
 	const { resId } = useParams();
-	const { resDetails, accordionStaticList, accordionList, setAccordionList } =
-		useRestaurantMenu(resId);
+	const {
+		resDetails,
+		accordionStaticList,
+		accordionList,
+		setAccordionList,
+		whichAccordion,
+		setWhichAccordion,
+		whichFilterBtn,
+		setwhichFilterBtn,
+	} = useRestaurantMenu(resId);
 
 	if (!onlineStatus) return <NoInternet />;
 
@@ -24,7 +32,43 @@ function RestaurantMenu() {
 		areaName,
 		sla,
 		feeDetails,
+		veg,
 	} = resDetails;
+
+	const foodFilterLogic = (category, btnNum) => {
+		// btn color and active filter-btn logic
+		whichFilterBtn === btnNum ? "" : setwhichFilterBtn(btnNum);
+
+		//setting the accordionList back to the original data before
+		//filtering
+		const nextAccordionList = structuredClone(accordionStaticList);
+		// biome-ignore lint/complexity/noForEach: <explanation>
+		nextAccordionList.forEach((e) => {
+			e.card.card.itemCards =
+				e?.card?.card?.itemCards?.filter((f) => {
+					return f?.card?.info?.itemAttribute?.vegClassifier === category;
+				}) || [];
+		});
+		//setting the accordianList with filtered data
+		setAccordionList(nextAccordionList);
+	};
+
+	const handleFilter = (category) => {
+		switch (category) {
+			case "VEG":
+				foodFilterLogic(category, 1);
+				break;
+
+			case "NONVEG":
+				foodFilterLogic(category, 2);
+				break;
+
+			default:
+				whichFilterBtn === 0 ? "" : setwhichFilterBtn(0);
+				setAccordionList(structuredClone(accordionStaticList));
+				break;
+		}
+	};
 
 	return (
 		<div className="restaurant-menu-con">
@@ -68,8 +112,11 @@ function RestaurantMenu() {
 					<hr />
 					<div className="dt-rider">
 						<i className="fi fi-rs-biking-mountain" />{" "}
-						<span className="kms">{sla?.lastMileTravel} kms</span> | ₹
-						{feeDetails?.totalFee / 100} Delivery fee will apply
+						<span className="kms">{sla?.lastMileTravel} kms</span>{" "}
+						{feeDetails?.totalFee
+							? `| ₹
+						${feeDetails?.totalFee / 100} Delivery fee will apply`
+							: ""}
 					</div>
 				</div>
 			</div>
@@ -81,85 +128,50 @@ function RestaurantMenu() {
 				</div>
 				<hr />
 				{/* filter */}
-				<div id="food-cat-classifier" className="filter-con">
-					<button
-						type="button"
-						onClick={(e) => {
-							setAccordionList(structuredClone(accordionStaticList));
-
-							for (btn of e.target.parentElement.children) {
-								if (btn.textContent.trim() === e.target.textContent.trim()) {
-									btn.style.backgroundColor = "#64b5f6";
-									btn.style.color = "#fff";
-								} else {
-									btn.style.backgroundColor = "#fff";
-									btn.style.color = "#000";
-								}
-							}
-						}}
-					>
-						ALL
-					</button>
-					<button
-						type="button"
-						onClick={(e) => {
-							const nextAccordionList = structuredClone(accordionStaticList);
-
-							for (btn of e.target.parentElement.children) {
-								if (btn.textContent.trim() === e.target.textContent.trim()) {
-									btn.style.backgroundColor = "#59cd90";
-									btn.style.color = "#fff";
-								} else {
-									btn.style.backgroundColor = "#fff";
-									btn.style.color = "#000";
-								}
-							}
-
-							// biome-ignore lint/complexity/noForEach: <explanation>
-							nextAccordionList.forEach((e) => {
-								e.card.card.itemCards = e.card.card.itemCards.filter((f) => {
-									return f.card.info?.itemAttribute?.vegClassifier !== "NONVEG";
-								});
-							});
-							setAccordionList(nextAccordionList);
-						}}
-					>
-						Veg
-					</button>
-					<button
-						type="button"
-						onClick={(e) => {
-							const nextAccordionList = structuredClone(accordionStaticList);
-
-							for (btn of e.target.parentElement.children) {
-								if (btn.textContent.trim() === e.target.textContent.trim()) {
-									btn.style.backgroundColor = "#f65434";
-									btn.style.color = "#fff";
-								} else {
-									btn.style.backgroundColor = "#fff";
-									btn.style.color = "#000";
-								}
-							}
-							// biome-ignore lint/complexity/noForEach: <explanation>
-							nextAccordionList.forEach((e) => {
-								e.card.card.itemCards = e.card.card.itemCards.filter((f) => {
-									return f.card.info?.itemAttribute?.vegClassifier === "NONVEG";
-								});
-							});
-							setAccordionList(nextAccordionList);
-						}}
-					>
-						Non-Veg
-					</button>
-				</div>
+				{veg === true ? (
+					""
+				) : (
+					<div id="food-cat-classifier" className="filter-con">
+						<button
+							type="button"
+							className={whichFilterBtn === 0 ? "all-filter-btn" : ""}
+							onClick={() => {
+								handleFilter("ALL");
+							}}
+						>
+							ALL
+						</button>
+						<button
+							type="button"
+							className={whichFilterBtn === 1 ? "veg-filter-btn" : ""}
+							onClick={() => {
+								handleFilter("VEG");
+							}}
+						>
+							Veg
+						</button>
+						<button
+							type="button"
+							className={whichFilterBtn === 2 ? "nonveg-filter-btn" : ""}
+							onClick={() => {
+								handleFilter("NONVEG");
+							}}
+						>
+							Non-Veg
+						</button>
+					</div>
+				)}
 			</div>
-			{accordionList.map((e) => {
-				return (
+			{accordionList.map((e, index) => {
+				return e?.card?.card?.itemCards.length !== 0 ? (
 					<AccordionMenu
 						key={crypto.randomUUID()}
 						accordionData={e?.card?.card}
+						index={index}
+						whichAccordion={whichAccordion}
+						setWhichAccordion={setWhichAccordion}
 					/>
-				);
+				) : null;
 			})}
 		</div>
 	);

@@ -5,6 +5,8 @@ export default function useRestaurantMenu(resId) {
 	const [resDetails, setResDetails] = useState(null);
 	const [accordionStaticList, setAccordionStaticList] = useState([]);
 	const [accordionList, setAccordionList] = useState([]);
+	const [whichAccordion, setWhichAccordion] = useState(0);
+	const [whichFilterBtn, setwhichFilterBtn] = useState(0);
 
 	useEffect(() => {
 		const fetchMenu = async () => {
@@ -17,18 +19,22 @@ export default function useRestaurantMenu(resId) {
 				setResDetails(data?.data?.cards[2]?.card?.card?.info);
 
 				const accordionDataList =
-					data?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards
-						.slice(2)
-						.filter((e) => Array.isArray(e?.card?.card?.itemCards)) || [];
+					data?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+						(e) =>
+							e?.card?.card?.["@type"] ===
+							"type.googleapis.com/swiggy.presentation.food.v2.ItemCategory",
+					) || [];
 
-				// Deep copy for the static list to ensure it's not altered
-				const deepCopyForStaticList = structuredClone(accordionDataList);
+				if (!data?.veg) {
+					// Deep copy for the static list to ensure it's not altered
+					const deepCopyForStaticList = structuredClone(accordionDataList);
 
-				// Set the static list with the deep copy
-				setAccordionStaticList(deepCopyForStaticList);
+					// Set the static list with the deep copy
+					setAccordionStaticList(deepCopyForStaticList);
 
-				// Set the dynamic list with the original (or shallow copy) data
-				setAccordionList(accordionDataList);
+					// Set the dynamic list with the original (or shallow copy) data
+					setAccordionList(accordionDataList);
+				}
 			} catch (error) {
 				console.error(`Error fetching restaurant menu : ${error}`);
 			}
@@ -44,5 +50,9 @@ export default function useRestaurantMenu(resId) {
 		setAccordionStaticList,
 		accordionList,
 		setAccordionList,
+		whichAccordion,
+		setWhichAccordion,
+		whichFilterBtn,
+		setwhichFilterBtn,
 	};
 }
