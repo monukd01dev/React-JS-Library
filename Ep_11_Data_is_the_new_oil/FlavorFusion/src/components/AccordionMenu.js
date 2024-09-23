@@ -1,15 +1,8 @@
 import { useEffect, useState } from "react";
 import DishSlab from "./DishSlab";
 
-const AccordionMenu = ({
-	accordionData,
-	index,
-	whichAccordion,
-	setWhichAccordion,
-}) => {
+const AccordionMenu = ({ accordionData, showAccordion, setWhichAccordion }) => {
 	const { title, itemCards } = accordionData;
-	const handleClick = () =>
-		setWhichAccordion(whichAccordion === index ? null : index);
 
 	return (
 		<div className="accordion">
@@ -20,17 +13,18 @@ const AccordionMenu = ({
 				</h3>{" "}
 				<button
 					type="button"
-					className={`chevronBtn ${whichAccordion === index ? "chevbtn" : ""}`}
-					onClick={handleClick}
+					className={`chevronBtn ${showAccordion && "chevbtn"}`}
+					onClick={() => {
+						setWhichAccordion();
+					}}
 				>
 					<i className="fa-solid fa-chevron-up" />
 				</button>
 			</div>
-			{whichAccordion === index
-				? itemCards.map((e) => {
-						return <DishSlab key={e.card.info.id} dishSlabData={e.card.info} />;
-					})
-				: ""}
+			{showAccordion &&
+				itemCards.map((e) => {
+					return <DishSlab key={e.card.info.id} dishSlabData={e.card.info} />;
+				})}
 		</div>
 	);
 };

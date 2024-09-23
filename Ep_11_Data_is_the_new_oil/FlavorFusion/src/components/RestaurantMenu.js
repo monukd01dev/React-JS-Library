@@ -37,20 +37,22 @@ function RestaurantMenu() {
 
 	const foodFilterLogic = (category, btnNum) => {
 		// btn color and active filter-btn logic
-		whichFilterBtn === btnNum ? "" : setwhichFilterBtn(btnNum);
+		if (whichFilterBtn !== btnNum) {
+			setwhichFilterBtn(btnNum);
 
-		//setting the accordionList back to the original data before
-		//filtering
-		const nextAccordionList = structuredClone(accordionStaticList);
-		// biome-ignore lint/complexity/noForEach: <explanation>
-		nextAccordionList.forEach((e) => {
-			e.card.card.itemCards =
-				e?.card?.card?.itemCards?.filter((f) => {
-					return f?.card?.info?.itemAttribute?.vegClassifier === category;
-				}) || [];
-		});
-		//setting the accordianList with filtered data
-		setAccordionList(nextAccordionList);
+			//setting the accordionList back to the original data before
+			//filtering
+			const nextAccordionList = structuredClone(accordionStaticList);
+			// biome-ignore lint/complexity/noForEach: <explanation>
+			nextAccordionList.forEach((e) => {
+				e.card.card.itemCards =
+					e?.card?.card?.itemCards?.filter((f) => {
+						return f?.card?.info?.itemAttribute?.vegClassifier === category;
+					}) || [];
+			});
+			//setting the accordianList with filtered data
+			setAccordionList(nextAccordionList);
+		}
 	};
 
 	const handleFilter = (category) => {
@@ -64,7 +66,7 @@ function RestaurantMenu() {
 				break;
 
 			default:
-				whichFilterBtn === 0 ? "" : setwhichFilterBtn(0);
+				whichFilterBtn !== 0 && setwhichFilterBtn(0);
 				setAccordionList(structuredClone(accordionStaticList));
 				break;
 		}
@@ -113,10 +115,9 @@ function RestaurantMenu() {
 					<div className="dt-rider">
 						<i className="fi fi-rs-biking-mountain" />{" "}
 						<span className="kms">{sla?.lastMileTravel} kms</span>{" "}
-						{feeDetails?.totalFee
-							? `| ₹
-						${feeDetails?.totalFee / 100} Delivery fee will apply`
-							: ""}
+						{feeDetails?.totalFee &&
+							`| ₹
+						${feeDetails?.totalFee / 100} Delivery fee will apply`}
 					</div>
 				</div>
 			</div>
@@ -134,7 +135,7 @@ function RestaurantMenu() {
 					<div id="food-cat-classifier" className="filter-con">
 						<button
 							type="button"
-							className={whichFilterBtn === 0 ? "all-filter-btn" : ""}
+							className={whichFilterBtn === 0 && "all-filter-btn"}
 							onClick={() => {
 								handleFilter("ALL");
 							}}
@@ -143,7 +144,7 @@ function RestaurantMenu() {
 						</button>
 						<button
 							type="button"
-							className={whichFilterBtn === 1 ? "veg-filter-btn" : ""}
+							className={whichFilterBtn === 1 && "veg-filter-btn"}
 							onClick={() => {
 								handleFilter("VEG");
 							}}
@@ -152,7 +153,7 @@ function RestaurantMenu() {
 						</button>
 						<button
 							type="button"
-							className={whichFilterBtn === 2 ? "nonveg-filter-btn" : ""}
+							className={whichFilterBtn === 2 && "nonveg-filter-btn"}
 							onClick={() => {
 								handleFilter("NONVEG");
 							}}
@@ -167,9 +168,10 @@ function RestaurantMenu() {
 					<AccordionMenu
 						key={crypto.randomUUID()}
 						accordionData={e?.card?.card}
-						index={index}
-						whichAccordion={whichAccordion}
-						setWhichAccordion={setWhichAccordion}
+						showAccordion={whichAccordion === index}
+						setWhichAccordion={() => {
+							setWhichAccordion(whichAccordion === index ? null : index);
+						}}
 					/>
 				) : null;
 			})}
