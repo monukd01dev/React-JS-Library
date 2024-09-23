@@ -25,7 +25,7 @@ const DishSlab = ({ dishSlabData }) => {
 							) : (
 								<i className="fa-solid fa-square-caret-up __veg" />
 							)}
-							{ribbon ? <span className="ribbon">{ribbon?.text}</span> : ""}
+							{ribbon && <span className="ribbon">{ribbon?.text}</span>}
 						</div>
 						<div className="dish-name">{name}</div>
 						<div className="dish-price">
@@ -39,7 +39,7 @@ const DishSlab = ({ dishSlabData }) => {
 							) : (
 								<>₹ {(defaultPrice || price) / 100}</>
 							)}
-							{offerTags?.[0].title ? (
+							{offerTags?.[0].title && (
 								<>
 									{" "}
 									<i className="fa-solid fa-tag" />
@@ -48,12 +48,10 @@ const DishSlab = ({ dishSlabData }) => {
 										{offerTags[0]?.subTitle}
 									</span>
 								</>
-							) : (
-								""
 							)}
 						</div>
 						<div className="dish-rating">
-							{ratings?.aggregatedRating?.rating ? (
+							{ratings?.aggregatedRating?.rating && (
 								<>
 									<i className="fa-solid fa-star star" />
 									<span className="rating">
@@ -64,8 +62,6 @@ const DishSlab = ({ dishSlabData }) => {
 										({ratings?.aggregatedRating?.ratingCountV2})
 									</span>
 								</>
-							) : (
-								""
 							)}
 						</div>
 						<div className="dish-description">
