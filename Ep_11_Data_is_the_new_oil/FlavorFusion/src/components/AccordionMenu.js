@@ -1,13 +1,18 @@
-import { useEffect ,useState} from "react";
+import { useEffect, useState } from "react";
 import DishSlab from "./DishSlab";
 
-const AccordionMenu = ({ accordionData,index,whichAccordion,setWhichAccordion }) => {
-	
+const AccordionMenu = ({
+	accordionData,
+	index,
+	whichAccordion,
+	setWhichAccordion,
+}) => {
 	const { title, itemCards } = accordionData;
-	const handleClick =()=> setWhichAccordion((whichAccordion === index) ? -1 : index);
+	const handleClick = () =>
+		setWhichAccordion(whichAccordion === index ? null : index);
 
 	return (
-		<div className="accordion acrd-on">
+		<div className="accordion">
 			<div className="acrdino-name">
 				{" "}
 				<h3>
@@ -15,15 +20,17 @@ const AccordionMenu = ({ accordionData,index,whichAccordion,setWhichAccordion })
 				</h3>{" "}
 				<button
 					type="button"
-					className={`chevronBtn ${(whichAccordion === index) ? 'chevbtn' : ''}`}
+					className={`chevronBtn ${whichAccordion === index ? "chevbtn" : ""}`}
 					onClick={handleClick}
 				>
 					<i className="fa-solid fa-chevron-up" />
 				</button>
 			</div>
-			{(whichAccordion === index) ? itemCards.map((e) => {
-				return <DishSlab key={e.card.info.id} dishSlabData={e.card.info} />;
-			}): ""}
+			{whichAccordion === index
+				? itemCards.map((e) => {
+						return <DishSlab key={e.card.info.id} dishSlabData={e.card.info} />;
+					})
+				: ""}
 		</div>
 	);
 };
