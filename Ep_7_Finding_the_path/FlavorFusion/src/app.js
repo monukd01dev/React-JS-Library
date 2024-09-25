@@ -18,7 +18,16 @@ const AppLayout = () => (
 	<div className="app">
 		<Header />
 		{/* <Main /> */}
-		<Outlet />
+		<UserContext.Provider
+			value={{
+				userName: "Abhijeet Kumar",
+				userEmail: "monukd01dev@gmail.com",
+				userAge: 18,
+				isPro: true,
+			}}
+		>
+			<Outlet />
+		</UserContext.Provider>
 	</div>
 );
 

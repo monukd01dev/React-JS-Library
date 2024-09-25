@@ -8,7 +8,7 @@ import ResMenuShimmer from "./components/ResMenuShimmer";
 import Contact from "./components/Contact";
 import MyError from "./components/MyError";
 // import RestaurantMenu from "./components/RestaurantMenu";
-const RestaurantMenu = lazy(() => import('./components/RestaurantMenu'));
+const RestaurantMenu = lazy(() => import("./components/RestaurantMenu"));
 
 // * making About lazy-loading, dynamic import
 // import About from "./components/About";
@@ -20,6 +20,7 @@ const About = lazy(() => import("./components/About"));
 
 //react-rounter code
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import UserContext from "../utils/UserContext";
 
 const Root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -27,7 +28,16 @@ const AppLayout = () => (
 	<div className="app">
 		<Header />
 		{/* <Main /> */}
-		<Outlet />
+		<UserContext.Provider
+			value={{
+				userName: "Abhijeet Kumar",
+				userEmail: "monukd01dev@gmail.com",
+				userAge: 18,
+				isPro: true,
+			}}
+		>
+			<Outlet />
+		</UserContext.Provider>
 	</div>
 );
 
@@ -42,9 +52,11 @@ const appRoutes = createBrowserRouter([
 			},
 			{
 				path: "/about",
-				element: <Suspense fallback={<ResMenuShimmer/>}>
-					<About />
-				</Suspense>,
+				element: (
+					<Suspense fallback={<ResMenuShimmer />}>
+						<About />
+					</Suspense>
+				),
 			},
 			{
 				path: "/contact",
@@ -52,9 +64,11 @@ const appRoutes = createBrowserRouter([
 			},
 			{
 				path: "/restaurant/:resId",
-				element: <Suspense fallback={<ResMenuShimmer/>}>
-				<RestaurantMenu />
-			</Suspense>,
+				element: (
+					<Suspense fallback={<ResMenuShimmer />}>
+						<RestaurantMenu />
+					</Suspense>
+				),
 			},
 		],
 		errorElement: <MyError />,

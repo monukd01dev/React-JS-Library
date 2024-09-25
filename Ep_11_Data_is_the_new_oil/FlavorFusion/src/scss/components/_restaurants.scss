@@ -1,19 +1,21 @@
 // retaurant-container design
 
-.promoted-card-con{
+.promoted-card-con {
     position: relative;
-    .p-label{
+
+    .p-label {
         position: absolute;
         padding: 5px 12px;
         background-color: rgb(42, 42, 42);
         top: 26px;
-    left: -3px;
-    transform: scale(.8);
+        left: -3px;
+        transform: scale(.8);
         color: white;
 
 
     }
-    .p-label::after{
+
+    .p-label::after {
         content: "";
         position: absolute;
         width: 10px;
@@ -31,9 +33,9 @@
 .restaurant-container {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, 280px);
+    grid-template-columns: repeat(auto-fill, 280px);
     gap: 20px;
-    place-content: start;
+    place-content: center;
 
     margin-top: 0px;
 
