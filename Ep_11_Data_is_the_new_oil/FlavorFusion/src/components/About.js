@@ -9,12 +9,19 @@ function About() {
 	if (!onlineStatus) return <NoInternet />;
 
 	//? consuming my context
-	const { userName, userEmail, userAge, isPro } = useContext(UserContext);
+	const { userName, userEmail, userAge, isPro, setMainName } =
+		useContext(UserContext);
 	// ?
 	return (
 		<div className="about-con">
 			<h1>About-Page</h1>
-
+			<label htmlFor="changeUser">New User Name :</label>
+			<input
+				type="text"
+				name="changeUser"
+				id="changeUser"
+				onChange={(e) => setMainName(e.target.value)}
+			/>
 			<table
 				border={1}
 				style={{

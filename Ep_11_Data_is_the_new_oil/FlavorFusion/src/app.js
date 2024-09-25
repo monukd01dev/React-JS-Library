@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import ReactDOM from "react-dom/client";
 //importing components
 import Header from "./components/Header";
@@ -24,22 +24,26 @@ import UserContext from "../utils/UserContext";
 
 const Root = ReactDOM.createRoot(document.getElementById("root"));
 
-const AppLayout = () => (
-	<div className="app">
-		<Header />
-		{/* <Main /> */}
-		<UserContext.Provider
-			value={{
-				userName: "Abhijeet Kumar",
-				userEmail: "monukd01dev@gmail.com",
-				userAge: 18,
-				isPro: true,
-			}}
-		>
-			<Outlet />
-		</UserContext.Provider>
-	</div>
-);
+const AppLayout = () => {
+	const [mainName, setMainName] = useState("mainUser");
+
+	return (
+		<div className="app">
+			<UserContext.Provider
+				value={{
+					userName: mainName,
+					setMainName: setMainName,
+					userEmail: "monukd01dev@gmail.com",
+					userAge: 18,
+					isPro: true,
+				}}
+			>
+				<Header />
+				<Outlet />
+			</UserContext.Provider>
+		</div>
+	);
+};
 
 const appRoutes = createBrowserRouter([
 	{
