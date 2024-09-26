@@ -13,7 +13,7 @@ const AccordionMenu = ({ accordionData, showAccordion, setWhichAccordion }) => {
 				</h3>{" "}
 				<button
 					type="button"
-					className={`chevronBtn ${showAccordion && "chevbtn"}`}
+					className={`chevronBtn ${showAccordion ? "chevbtn" : ""}`}
 					onClick={() => {
 						setWhichAccordion();
 					}}

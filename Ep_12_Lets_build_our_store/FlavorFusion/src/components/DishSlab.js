@@ -1,6 +1,9 @@
+import { useDispatch } from "react-redux";
 import { DISH_SLAB_IMG_URL } from "../../utils/constants";
-
+import { addItem, removeItem } from "../../utils/cartSlice";
 const DishSlab = ({ dishSlabData }) => {
+	const cartDispatcher = useDispatch();
+
 	const {
 		ribbon,
 		name,
@@ -13,6 +16,10 @@ const DishSlab = ({ dishSlabData }) => {
 		itemAttribute,
 		imageId,
 	} = dishSlabData;
+
+	function handleCartAdd(dishSlabData) {
+		cartDispatcher(addItem(dishSlabData));
+	}
 
 	return (
 		<div className="dish-slab-con">
@@ -80,7 +87,11 @@ const DishSlab = ({ dishSlabData }) => {
 						) : (
 							<div className="empty-saver" />
 						)}
-						<button type="button" className="img-con-btn">
+						<button
+							type="button"
+							className="img-con-btn"
+							onClick={() => handleCartAdd(dishSlabData)}
+						>
 							add
 						</button>
 					</div>

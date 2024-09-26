@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import { FF_LOGO } from "../../utils/constants";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+	const cartItems = useSelector((store) => store.cart.items);
+	console.log(cartItems);
 	return (
 		<div className="header">
 			<div className="logo">
@@ -12,7 +15,7 @@ const Header = () => {
 				<Link to="/contact">Contact</Link>
 				<Link to="/about">About</Link>
 				<Link to="/cart">
-					<i className="fa-solid fa-cart-shopping" />
+					<i className="fa-solid fa-cart-shopping" /> ({cartItems.length})
 				</Link>
 			</div>
 		</div>

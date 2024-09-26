@@ -4,6 +4,7 @@ import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import ResMenuShimmer from "./components/ResMenuShimmer";
+import UserCart from "./components/UserCart";
 //pages
 import Contact from "./components/Contact";
 import MyError from "./components/MyError";
@@ -15,15 +16,21 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 const RestaurantMenu = lazy(() => import("./components/RestaurantMenu"));
 const About = lazy(() => import("./components/About"));
 
+// redux code
+import appStore from "../utils/appStore";
+import { Provider } from "react-redux";
+
 // creating root
 const Root = ReactDOM.createRoot(document.getElementById("root"));
 
 const AppLayout = () => {
 	return (
-		<div className="app">
-			<Header />
-			<Outlet />
-		</div>
+		<Provider store={appStore}>
+			<div className="app">
+				<Header />
+				<Outlet />
+			</div>
+		</Provider>
 	);
 };
 
@@ -55,6 +62,10 @@ const appRoutes = createBrowserRouter([
 						<RestaurantMenu />
 					</Suspense>
 				),
+			},
+			{
+				path: "/cart",
+				element: <UserCart />,
 			},
 		],
 		errorElement: <MyError />,
