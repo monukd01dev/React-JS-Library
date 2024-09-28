@@ -1,7 +1,7 @@
 .user-cart-con {
     max-width: 935px;
     margin: auto;
-    outline: 2px solid black;
+
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -45,9 +45,20 @@
             }
 
             .cart-items-con {
-                outline: 2px solid black;
+
                 height: 600px;
-                padding: 5px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                padding: 0px 10px;
+                padding-top: 2px;
+                overflow: scroll;
+                overflow: -moz-scrollbars-none;
+                -ms-overflow-style: none;
+            }
+
+            .cart-items-con::-webkit-scrollbar {
+                width: 0 !important
             }
 
         }
@@ -57,12 +68,12 @@
     .summary-con {
         flex-basis: 35%;
         // min-width: 300px;
-        outline: 2px solid black;
         // height: fit-content;
 
 
         .cart-summary {
             padding: 15px;
+            outline: 2px solid black;
 
             .horizontal-line {
                 height: 2px;

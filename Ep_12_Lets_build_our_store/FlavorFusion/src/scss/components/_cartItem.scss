@@ -1,0 +1,117 @@
+.cartItem-con {
+
+
+    .cartItem {
+        display: flex;
+        gap: 10px;
+
+        .item-img-con {
+            height: 100px;
+            flex-basis: 110px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 5px;
+        }
+
+        // ! data
+        .item-data-con {
+            display: flex;
+            flex-grow: 1;
+            justify-content: space-between;
+
+
+            .restro-details-con {
+                margin-top: 10px;
+                display: flex;
+                flex-basis: 50%;
+                flex-direction: column;
+                gap: 3px;
+
+                .item-name {
+                    display: flex;
+                    align-items: baseline;
+                    gap: 4px;
+
+                    .veg-classifier-con {
+                        .outer-square {
+                            height: 16px;
+                            width: 16px;
+                            border: 2px solid #008001;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            .inner-circle {
+                                border-radius: 100%;
+                                height: 8px;
+                                width: 8px;
+                                background-color: #008001;
+                            }
+
+                            .red {
+                                background-color: red;
+                            }
+                        }
+
+                        .red {
+                            border: 2px solid red;
+                        }
+                    }
+                }
+
+                .restro-name {
+                    p {
+                        padding-left: 22px;
+                        font-size: small;
+                    }
+                }
+            }
+
+
+            .item-count-con {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #9d9d9d;
+
+                .item-counter {
+                    border: 2px solid #9d9d9d;
+                    width: 72px;
+                    height: 27px;
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    place-items: center center;
+
+                    button {
+                        outline: none;
+                        border: none;
+                        width: 100%;
+                        height: 100%;
+                        background: none;
+                        font-size: large;
+                        color: #9d9d9d;
+                    }
+                }
+            }
+
+            .item-price-con {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2px;
+
+                .price {
+                    font-size: medium;
+                    text-decoration: line-through;
+                    color: #878686;
+                }
+
+                .selling-price {
+                    font-size: larger;
+                }
+            }
+        }
+    }
+
+}

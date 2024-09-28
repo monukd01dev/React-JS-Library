@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import DishSlab from "./DishSlab";
+import CartItem from "./CartItem";
 import { clearCart } from "../../utils/cartSlice";
 
 const UserCart = () => {
@@ -24,7 +24,17 @@ const UserCart = () => {
 						</button>
 					</div>
 					<div className="horizontal-line" />
-					<div className="cart-items-con">{/* cartItem components here */}</div>
+					<div className="cart-items-con">
+						{cartItems.length > 0 ? (
+							<>
+								{cartItems.map((item) => (
+									<CartItem key={item.id} itemData={item} />
+								))}
+							</>
+						) : (
+							<h2>Your Cart Is Empty</h2>
+						)}
+					</div>
 				</div>
 			</div>
 			{/* summary */}
