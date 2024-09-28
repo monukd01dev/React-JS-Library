@@ -1,0 +1,122 @@
+.user-cart-con {
+    max-width: 935px;
+    margin: auto;
+    outline: 2px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .cart-con {
+        flex-basis: 60%;
+        // min-width: 500px;
+        outline: 2px solid black;
+
+
+        .cart {
+            padding: 15px;
+
+            .cart-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                button.clear {
+                    background: #1f1f1f;
+                    color: white;
+                    padding: 8px 15px;
+                    outline: none;
+                    border: none;
+                    border-radius: 5px;
+                    font-size: 0.9rem;
+                }
+
+                button.clear:hover {
+                    background: #2f2f2f;
+                }
+
+            }
+
+            .horizontal-line {
+                height: 2px;
+                width: 100%;
+                background-color: rgb(21, 21, 21);
+                margin-top: 10px;
+                margin-bottom: 15px;
+            }
+
+            .cart-items-con {
+                outline: 2px solid black;
+                height: 600px;
+                padding: 5px;
+            }
+
+        }
+
+    }
+
+    .summary-con {
+        flex-basis: 35%;
+        // min-width: 300px;
+        outline: 2px solid black;
+        // height: fit-content;
+
+
+        .cart-summary {
+            padding: 15px;
+
+            .horizontal-line {
+                height: 2px;
+                width: 100%;
+                background-color: rgb(21, 21, 21);
+                margin-top: 10px;
+                margin-bottom: 15px;
+            }
+
+            .sub-head-bill {
+                .bill-details-con {
+                    margin-top: 12px;
+                    margin-bottom: 12px;
+                    font: 0.7rem;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    .bill-row {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        .right {
+                            font-size: 0.95rem;
+
+                            .strikeOff {
+                                text-decoration: line-through;
+                                margin-right: 10px;
+                            }
+                        }
+                    }
+
+                }
+
+                .horizontal-line {
+                    height: 2px;
+                    background-color: black;
+
+                    margin: 20px 0px;
+                }
+
+                .horizontal-line-light {
+                    height: 1px;
+                    background-color: rgb(167, 167, 167);
+                    margin: 20px 0px;
+                }
+
+                .final-amount {
+                    padding-top: 5px;
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
+        }
+    }
+}
