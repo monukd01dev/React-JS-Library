@@ -10,7 +10,7 @@ const UserCart = () => {
 	function handleClearCart() {
 		cartDispatcher(clearCart());
 	}
-	console.log(cartItems);
+	console.log("cartItems : ", cartItems);
 
 	return (
 		<div className="user-cart-con">
@@ -19,16 +19,17 @@ const UserCart = () => {
 				<div className="cart">
 					<div className="cart-header">
 						<h1>Cart</h1>
-						<button type="button" className="clear">
-							Clear
+						<button type="button" className="clear" onClick={handleClearCart}>
+							{" "}
+							Clear{" "}
 						</button>
 					</div>
 					<div className="horizontal-line" />
 					<div className="cart-items-con">
-						{cartItems.length > 0 ? (
+						{cartItems?.length > 0 ? (
 							<>
 								{cartItems.map((item) => (
-									<CartItem key={item.id} itemData={item} />
+									<CartItem key={item?.id} itemData={item} />
 								))}
 							</>
 						) : (

@@ -18,7 +18,7 @@ const DishSlab = ({ dishSlabData }) => {
 	} = dishSlabData;
 
 	function handleCartAdd(dishSlabData) {
-		cartDispatcher(addItem(dishSlabData));
+		cartDispatcher(addItem({...dishSlabData,quantity: 1}));
 	}
 
 	return (

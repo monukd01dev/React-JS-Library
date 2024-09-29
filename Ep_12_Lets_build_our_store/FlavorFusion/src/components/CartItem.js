@@ -1,8 +1,17 @@
+import { useDispatch } from "react-redux";
 import { DISH_SLAB_IMG_URL } from "../../utils/constants";
-
+import { addItem, removeItem } from "../../utils/cartSlice";
 const CartItem = ({ itemData }) => {
-	const { defaultPrice, price, finalPrice, name, isVeg, imageId } = itemData;
-	console.log("ItemData : ", itemData);
+	const cartItemDispatcher = useDispatch();
+	const { defaultPrice, price, finalPrice, name, isVeg, imageId, quantity } =
+		itemData;
+
+	function handleAddItem(item) {
+		cartItemDispatcher(addItem(item));
+	}
+	function handleRemoveItem(item) {
+		cartItemDispatcher(removeItem(item));
+	}
 	return (
 		<div className="cartItem-con">
 			<div className="cartItem">
@@ -36,9 +45,13 @@ const CartItem = ({ itemData }) => {
 					</div>
 					<div className="item-count-con">
 						<div className="item-counter">
-							<button type="button">-</button>
-							<div className="display">0</div>
-							<button type="button">+</button>
+							<button type="button" onClick={() => handleRemoveItem(itemData)}>
+								-
+							</button>
+							<div className="display">{quantity}</div>
+							<button type="button" onClick={() => handleAddItem(itemData)}>
+								+
+							</button>
 						</div>
 					</div>
 					<div className="item-price-con">
