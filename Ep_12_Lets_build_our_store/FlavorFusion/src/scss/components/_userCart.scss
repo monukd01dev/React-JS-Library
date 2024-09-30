@@ -9,6 +9,7 @@
     .cart-con {
         flex-basis: 60%;
         // min-width: 500px;
+        height: fit-content;
         outline: 2px solid black;
 
 
@@ -46,7 +47,8 @@
 
             .cart-items-con {
 
-                height: 600px;
+                max-height: 600px;
+                // outline: 1px solid #1f1f1f;
                 display: flex;
                 flex-direction: column;
                 gap: 10px;
@@ -97,8 +99,22 @@
                         justify-content: space-between;
                         align-items: center;
 
+                        .strikeOff {
+                            opacity: 0.6;
+                        }
+
+                        .left {
+                            opacity: 0.8;
+
+                        }
+
                         .right {
                             font-size: 0.95rem;
+
+                            .sp-green {
+                                color: #069739;
+                                font-weight: 500;
+                            }
 
                             .strikeOff {
                                 text-decoration: line-through;
@@ -126,6 +142,8 @@
                     padding-top: 5px;
                     display: flex;
                     justify-content: space-between;
+                    font-weight: 700;
+                    font-size: medium;
                 }
             }
         }

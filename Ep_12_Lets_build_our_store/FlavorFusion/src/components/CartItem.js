@@ -45,7 +45,11 @@ const CartItem = ({ itemData }) => {
 					</div>
 					<div className="item-count-con">
 						<div className="item-counter">
-							<button type="button" onClick={() => handleRemoveItem(itemData)}>
+							<button
+								type="button"
+								className="minus"
+								onClick={() => handleRemoveItem(itemData)}
+							>
 								-
 							</button>
 							<div className="display">{quantity}</div>
@@ -55,9 +59,13 @@ const CartItem = ({ itemData }) => {
 						</div>
 					</div>
 					<div className="item-price-con">
-						{price && <p className="price">₹{price / 100}</p>}
+						{finalPrice && (
+							<p className="price">
+								₹{(quantity * (price || defaultPrice)) / 100}
+							</p>
+						)}
 						<p className="selling-price">
-							₹{finalPrice / 100 || defaultPrice / 100}
+							₹{quantity * ((finalPrice || defaultPrice || price) / 100)}
 						</p>
 					</div>
 				</div>

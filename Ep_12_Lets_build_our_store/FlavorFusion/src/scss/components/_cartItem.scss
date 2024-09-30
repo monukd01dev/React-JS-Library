@@ -8,6 +8,7 @@
         .item-img-con {
             height: 100px;
             flex-basis: 110px;
+            min-width: 110px;
             background-size: cover;
             background-position: center;
             border-radius: 5px;
@@ -21,6 +22,7 @@
 
 
             .restro-details-con {
+
                 margin-top: 10px;
                 display: flex;
                 flex-basis: 50%;
@@ -69,10 +71,12 @@
 
 
             .item-count-con {
+
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                color: #9d9d9d;
+                color: #069739;
+                font-weight: 600;
 
                 .item-counter {
                     border: 2px solid #9d9d9d;
@@ -89,26 +93,32 @@
                         height: 100%;
                         background: none;
                         font-size: large;
+                        color: #069739;
+                    }
+
+                    .minus {
                         color: #9d9d9d;
                     }
+
                 }
             }
 
             .item-price-con {
                 display: flex;
                 flex-direction: column;
+                flex-basis: 100px;
                 justify-content: center;
-                align-items: center;
+                align-items: end;
                 gap: 2px;
 
                 .price {
-                    font-size: medium;
+                    font-size: small;
                     text-decoration: line-through;
                     color: #878686;
                 }
 
                 .selling-price {
-                    font-size: larger;
+                    font-size: medium;
                 }
             }
         }
