@@ -3,6 +3,7 @@ import useUserCart from "../../utils/useUserCart";
 import { useSelector } from "react-redux";
 import useOnlineStatus from "../../utils/useOnlineStatus";
 import NoInternet from "./NoInternet";
+import EmptyCart from "./EmptyCart";
 const UserCart = () => {
 	const onlineStatus = useOnlineStatus();
 
@@ -23,7 +24,7 @@ const UserCart = () => {
 
 	if (!onlineStatus) return <NoInternet />;
 
-	if (cartItems.length === 0) return <h1>Your Cart is Empty</h1>;
+	if (cartItems.length === 0) return <EmptyCart />;
 
 	console.log("cartItems : ", cartItems);
 

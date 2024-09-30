@@ -1,9 +1,11 @@
 import ResMenuShimmer from "./ResMenuShimmer";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import AccordionMenu from "./AccordionMenu";
 import useRestaurantMenu from "../../utils/useRestaurantMenu";
 import useOnlineStatus from "../../utils/useOnlineStatus";
 import NoInternet from "./NoInternet";
+import cartGif from "../assets/cartGif.gif";
+import { useSelector } from "react-redux";
 
 function RestaurantMenu() {
 	const onlineStatus = useOnlineStatus();
@@ -18,6 +20,10 @@ function RestaurantMenu() {
 		whichFilterBtn,
 		setwhichFilterBtn,
 	} = useRestaurantMenu(resId);
+
+	const cartItems = useSelector((store) => store.cart.items);
+	const navigate = useNavigate();
+	const handCartNavigate = () => navigate("/cart");
 
 	if (!onlineStatus) return <NoInternet />;
 
@@ -175,6 +181,16 @@ function RestaurantMenu() {
 					/>
 				) : null;
 			})}
+			{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
+			<div
+				className={`item-added-notify ${cartItems.length !== 0 && "popup-show"}`}
+				onClick={handCartNavigate}
+			>
+				<h3>
+					{cartItems.length} {cartItems.length < 2 ? "Item" : "Items"} added
+				</h3>
+				<img src={cartGif} alt="" />
+			</div>
 		</div>
 	);
 }

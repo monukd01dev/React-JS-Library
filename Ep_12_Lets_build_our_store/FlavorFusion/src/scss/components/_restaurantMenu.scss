@@ -267,4 +267,40 @@
 
         }
     }
+
+    .item-added-notify {
+        position: fixed;
+        bottom: -80px;
+        left: 50%;
+        width: 850px;
+        transform: translateX(-50%);
+        height: 80px;
+        display: flex;
+        padding: 55px;
+        padding-top: 15px;
+        padding-bottom: 5px;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #60b246;
+        margin: auto;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        color: white;
+        letter-spacing: 1.2;
+        cursor: pointer;
+        transition: 0.3s ease;
+        opacity: 0;
+
+        img {
+            width: 60px;
+            height: 60px;
+        }
+
+    }
+
+    .popup-show {
+        opacity: 1;
+        bottom: 0;
+    }
+
 }

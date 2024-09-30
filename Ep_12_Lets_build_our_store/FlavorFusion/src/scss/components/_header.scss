@@ -26,6 +26,27 @@
             font-size: 1.3rem;
             font-weight: 600;
         }
+
+        .cart-icon-head {
+
+            position: relative;
+
+            .cart-items {
+                background-color: #fff;
+                border-radius: 100%;
+                // outline: 1px solid black;
+                justify-content: center;
+                align-items: center;
+                width: 18px;
+                height: 18px;
+                font-size: 15px;
+                display: flex;
+                position: absolute;
+                top: -9px;
+                left: 13px;
+
+            }
+        }
     }
 
 }
