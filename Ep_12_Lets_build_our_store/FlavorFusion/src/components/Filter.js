@@ -1,5 +1,6 @@
 import RestaurantCard, { promoteRestroCard } from "./RestaurantCard";
 import SkeletonCard from "./SkeletonCard";
+import SearchRestaurants from "./SearchRestaurants";
 import { Link } from "react-router-dom";
 import useRestaurantList from "../../utils/useRestaurantList";
 
@@ -11,30 +12,9 @@ const Filter = () => {
 	return (
 		<>
 			<div className="search-con">
-				<div className="search">
-					<input
-						type="text"
-						placeholder="What are you craving today?"
-						value={searchKey}
-						onChange={(e) => {
-							setSearchKey(e.target.value.trim().toLocaleLowerCase());
-						}}
-					/>
-
-					<button
-						type="button"
-						className="search-btn"
-						onClick={() => {
-							const nextResList = resConstList.filter(({ info }) =>
-								info.name.toLowerCase().includes(searchKey),
-							);
-
-							setResList(nextResList);
-						}}
-					>
-						<i className="fa-solid fa-magnifying-glass" />
-					</button>
-				</div>
+				<SearchRestaurants
+					{...{ setResList, resConstList, searchKey, setSearchKey }}
+				/>
 			</div>
 
 			<div className="con">
