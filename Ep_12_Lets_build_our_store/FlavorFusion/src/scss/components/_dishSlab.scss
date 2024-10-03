@@ -131,10 +131,6 @@
                 position: relative;
                 border-radius: 12px;
 
-                .empty-saver {
-                    width: 157px;
-                    height: 40px;
-                }
 
                 img {
                     width: 100%;
@@ -147,27 +143,55 @@
 
                 .img-con-btn {
                     position: absolute;
+                    height: 40px;
+                    width: 120px;
                     top: 100%;
                     left: 50%;
-                    transform: translate(-50%, -50%);
-                    font-weight: 800;
-                    font-size: 18px;
-                    line-height: 24px;
-                    text-transform: uppercase;
-                    color: rgb(27, 166, 114);
-                    height: 40px;
-                    background: rgb(255, 255, 255);
-                    border: 1px solid rgba(2, 6, 12, 0.15);
                     border-radius: 8px;
-                    width: 120px;
                     box-shadow: rgba(40, 44, 63, 0.08) 0px 3px 8px;
-                    transition: 100ms ease-in-out;
+                    border: 1px solid rgba(2, 6, 12, 0.15);
+                    transform: translate(-50%, -50%);
+                    overflow: hidden;
+
+                    button {
+                        width: 100%;
+                        height: 100%;
+                        font-weight: 800;
+                        font-size: 18px;
+                        line-height: 24px;
+                        text-transform: uppercase;
+                        color: rgb(27, 166, 114);
+                        background: rgb(255, 255, 255);
+                        border: none;
+                        outline: none;
+                        cursor: pointer;
+                        transition: 100ms ease-in-out;
+                    }
+
+                    :hover {
+                        background-color: #d9dadb;
+
+                    }
+
+                    .item-count-con {
+                        height: 100%;
+
+                        .item-counter {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            height: 100%;
+                            background: #fff;
+                            button:hover, .display:hover{
+                                background-color: #fff;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+
 
                 }
 
-                .img-con-btn:hover {
-                    background-color: #d9dadb;
-                }
             }
         }
     }

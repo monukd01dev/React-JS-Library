@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { DISH_SLAB_IMG_URL } from "../../utils/constants";
 import { addItem, removeItem } from "../../utils/cartSlice";
+import defaultImg from "./../assets/default_img.png";
 const CartItem = ({ itemData }) => {
 	const cartItemDispatcher = useDispatch();
 	const { defaultPrice, price, finalPrice, name, isVeg, imageId, quantity } =
@@ -17,7 +18,7 @@ const CartItem = ({ itemData }) => {
 			<div className="cartItem">
 				<div
 					className="item-img-con"
-					style={{ backgroundImage: `url('${DISH_SLAB_IMG_URL}${imageId}')` }}
+					style={{ backgroundImage: imageId ? `url('${DISH_SLAB_IMG_URL}${imageId}')` : `url('${defaultImg}')` }}
 				/>
 				{/* data */}
 				<div className="item-data-con">
@@ -64,7 +65,7 @@ const CartItem = ({ itemData }) => {
 								₹{(quantity * (price || defaultPrice)) / 100}
 							</p>
 						)}
-						<p className="selling-price">
+						<p className="selling-price" title={`${quantity} X ${((finalPrice || defaultPrice || price) / 100)}`}>
 							₹{quantity * ((finalPrice || defaultPrice || price) / 100)}
 						</p>
 					</div>
