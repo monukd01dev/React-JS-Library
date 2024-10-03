@@ -1,7 +1,13 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { DISH_SLAB_IMG_URL } from "../../utils/constants";
 import { addItem, removeItem } from "../../utils/cartSlice";
+import { useState } from "react";
+import ItemQuantitySelector from "./ItemQuantitySelector";
 const DishSlab = ({ dishSlabData }) => {
+	const cartItems = useSelector((store) => store.cart.items);
+	const showAdder = cartItems.find(
+		(item) => item.id === dishSlabData.id,
+	)?.quantity;
 	const cartDispatcher = useDispatch();
 
 	const {
@@ -18,7 +24,7 @@ const DishSlab = ({ dishSlabData }) => {
 	} = dishSlabData;
 
 	function handleCartAdd(dishSlabData) {
-		cartDispatcher(addItem({...dishSlabData,quantity: 1}));
+		cartDispatcher(addItem({ ...dishSlabData, quantity: 1 }));
 	}
 
 	return (
@@ -87,13 +93,17 @@ const DishSlab = ({ dishSlabData }) => {
 						) : (
 							<div className="empty-saver" />
 						)}
-						<button
-							type="button"
-							className="img-con-btn"
-							onClick={() => handleCartAdd(dishSlabData)}
-						>
-							add
-						</button>
+						{showAdder ? (
+							<ItemQuantitySelector itemID={dishSlabData.id} />
+						) : (
+							<button
+								type="button"
+								className="img-con-btn"
+								onClick={() => handleCartAdd(dishSlabData)}
+							>
+								add
+							</button>
+						)}
 					</div>
 				</div>
 			</div>

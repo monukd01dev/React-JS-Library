@@ -172,7 +172,7 @@ function RestaurantMenu() {
 			{accordionList.map((e, index) => {
 				return e?.card?.card?.itemCards.length !== 0 ? (
 					<AccordionMenu
-						key={crypto.randomUUID()}
+						key={e?.card?.card.title}
 						accordionData={e?.card?.card}
 						showAccordion={whichAccordion === index}
 						setWhichAccordion={() => {
