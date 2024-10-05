@@ -1,0 +1,72 @@
+.filter {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    // outline: 1px solid black;
+    border-bottom: 2px solid rgb(87 87 87 / 45%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.3rem;
+    padding: 10px;
+
+    .total-restaurants h2 {
+        font-weight: 500;
+    }
+
+    .filter-items {
+        display: inherit;
+        // width: 50%;
+        justify-content: inherit;
+        gap: 60px;
+
+        .static-filters {
+            display: inherit;
+            gap: 20px;
+
+            .static-btn {
+                font-size: 1.3rem;
+                padding: 6px 20px;
+                border: none;
+                color: #495057;
+                background-color: #fff;
+                cursor: pointer;
+                transition: all 0.1s ease;
+
+            }
+
+            .static-btn:hover {
+
+                color: #212529;
+
+            }
+        }
+
+
+        .custom-btn {
+
+            .filter-btn {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-size: 1.1rem;
+                padding: 6px 25px;
+                border: none;
+                color: white;
+                background-color: #ff9100;
+                border-radius: 25px;
+                transition: all 0.3s ease-in-out;
+
+                cursor: pointer;
+
+                span {
+                    margin-top: 4px;
+                }
+            }
+
+            .filter-btn:hover {
+                background-color: #ff7900;
+            }
+        }
+
+    }
+}

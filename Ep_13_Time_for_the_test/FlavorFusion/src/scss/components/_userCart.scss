@@ -1,0 +1,151 @@
+.user-cart-con {
+    max-width: 935px;
+    margin: auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .cart-con {
+        flex-basis: 60%;
+        // min-width: 500px;
+        height: fit-content;
+        outline: 2px solid black;
+
+
+        .cart {
+            padding: 15px;
+
+            .cart-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                button.clear {
+                    background: #1f1f1f;
+                    color: white;
+                    padding: 8px 15px;
+                    outline: none;
+                    border: none;
+                    border-radius: 5px;
+                    font-size: 0.9rem;
+                }
+
+                button.clear:hover {
+                    background: #2f2f2f;
+                }
+
+            }
+
+            .horizontal-line {
+                height: 2px;
+                width: 100%;
+                background-color: rgb(21, 21, 21);
+                margin-top: 10px;
+                margin-bottom: 15px;
+            }
+
+            .cart-items-con {
+
+                max-height: 600px;
+                // outline: 1px solid #1f1f1f;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                padding: 0px 10px;
+                padding-top: 2px;
+                overflow: scroll;
+                overflow: -moz-scrollbars-none;
+                -ms-overflow-style: none;
+            }
+
+            .cart-items-con::-webkit-scrollbar {
+                width: 0 !important
+            }
+
+        }
+
+    }
+
+    .summary-con {
+        flex-basis: 35%;
+        // min-width: 300px;
+        // height: fit-content;
+
+
+        .cart-summary {
+            padding: 15px;
+            outline: 2px solid black;
+
+            .horizontal-line {
+                height: 2px;
+                width: 100%;
+                background-color: rgb(21, 21, 21);
+                margin-top: 10px;
+                margin-bottom: 15px;
+            }
+
+            .sub-head-bill {
+                .bill-details-con {
+                    margin-top: 12px;
+                    margin-bottom: 12px;
+                    font: 0.7rem;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    .bill-row {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        .strikeOff {
+                            opacity: 0.6;
+                        }
+
+                        .left {
+                            opacity: 0.8;
+
+                        }
+
+                        .right {
+                            font-size: 0.95rem;
+
+                            .sp-green {
+                                color: #069739;
+                                font-weight: 500;
+                            }
+
+                            .strikeOff {
+                                text-decoration: line-through;
+                                margin-right: 10px;
+                            }
+                        }
+                    }
+
+                }
+
+                .horizontal-line {
+                    height: 2px;
+                    background-color: black;
+
+                    margin: 20px 0px;
+                }
+
+                .horizontal-line-light {
+                    height: 1px;
+                    background-color: rgb(167, 167, 167);
+                    margin: 20px 0px;
+                }
+
+                .final-amount {
+                    padding-top: 5px;
+                    display: flex;
+                    justify-content: space-between;
+                    font-weight: 700;
+                    font-size: medium;
+                }
+            }
+        }
+    }
+}
