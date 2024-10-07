@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
-import RestaurantCard from "../RestaurantCard";
+import RestaurantCard,{promoteRestroCard} from "../RestaurantCard";
 import restroData from "../__mocks__/restaurantMockData.json";
+
 import "@testing-library/jest-dom";
 
 describe("Test Cases for <RestaurantCard/> component", () => {
@@ -12,3 +13,15 @@ describe("Test Cases for <RestaurantCard/> component", () => {
 		expect(restroName).toBeInTheDocument();
 	});
 });
+
+describe("Test Case for <PromotedRestroCard/> component",()=>{
+	it("Should rendered with the promoted label",()=>{
+
+		const PromotedRestroCard = promoteRestroCard(RestaurantCard);
+		render(<PromotedRestroCard {...restroData}/>)
+
+		const specialText = screen.getByText("Promoted");
+
+		expect(specialText).toBeInTheDocument();
+	})
+})

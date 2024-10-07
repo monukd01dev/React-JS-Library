@@ -1,4 +1,23 @@
+# Node.js modules
 node_modules/
-.parcel-cache/
+
+# Build output directories
 dist/
+.parcel-cache/
 coverage/
+
+# WebStorm IDE files
+.idea/
+*.iml
+*.ipr
+*.iws
+*.user
+*.userprefs
+
+# Log files
+*.log
+
+# Temporary files
+.DS_Store
+Thumbs.db
+
