@@ -15,7 +15,7 @@ const RestaurantCard = (props) => {
 	};
 
 	return (
-		<div className="restaurant-card">
+		<div className="restaurant-card" data-testid="restaurantCard">
 			<div className="__card-img" style={styleForImg} />
 			<h3 className="__name">{name}</h3>
 			<p className="__cuisines">{cuisines.join(", ")}</p>

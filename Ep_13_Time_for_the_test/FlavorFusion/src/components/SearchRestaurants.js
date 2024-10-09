@@ -7,6 +7,7 @@ const SearchRestaurants = ({
 	<div className="search">
 		<input
 			type="text"
+			data-testid="SearchRestroInp"
 			placeholder="What are you craving today?"
 			value={searchKey}
 			onChange={(e) => {
@@ -17,6 +18,7 @@ const SearchRestaurants = ({
 		<button
 			type="button"
 			className="search-btn"
+			data-testid="SearchRestroBtn"
 			onClick={() => {
 				const nextResList = resConstList.filter(({ info }) =>
 					info.name.toLowerCase().includes(searchKey),
