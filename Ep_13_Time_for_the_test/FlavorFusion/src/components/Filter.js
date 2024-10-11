@@ -73,12 +73,11 @@ const Filter = () => {
 						</div>
 					</div>
 				</div>
-				{/*  //! key for skeleton key for skeleton key for skeleton */}
 				<div className="restaurant-container">
 					{resList.length === 0
 						? new Array(16)
 								.fill(1)
-								.map((e, index) => <SkeletonCard key={index} />)
+								.map((e) => <SkeletonCard key={crypto.randomUUID()} />)
 						: resList.map((data) => (
 								<Link to={`/restaurant/${data?.info?.id}`} key={data?.info?.id}>
 									{data?.info?.veg ? (

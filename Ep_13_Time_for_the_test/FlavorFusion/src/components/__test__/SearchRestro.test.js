@@ -13,6 +13,10 @@ global.fetch = jest.fn(() => {
 	});
 });
 
+global.crypto.randomUUID = jest.fn(() => {
+	return Math.random() * 10000 * (Math.random() * 10);
+});
+
 // fetch function returns a promise that resolve in an object usually we named as response, and this have a property named as json and it's value is a function which returns the promise and resolving with the data  and that's what we have mocked here...
 
 it("Should search RestaurantLists for ice text input", async () => {
